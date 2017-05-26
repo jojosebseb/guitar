@@ -22,10 +22,26 @@ $('.choice-module').on('click', function(){
     caption = $(this).find('.caption').html();
     $(this).parents('.build-tab').find('.selected-title-summary').html(caption);
     $(this).parents('.build-tab').find('.title').addClass('active');
-    console.log(caption);
+
 })
 
 $('.close-btn').on('click', function(){
     $(this).parent().removeClass('active');
+    $(this).parents('#popupParent').removeClass('active');
+})
+
+$('.jo-popup-parent').on('click', function(){
+    src = $(this).find('.jo-popup').attr('src');
+    $('#popupParent').addClass('active');
+    $('#popupParent img').attr('src', src);
+})
+
+$('.choice-belt').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: '<div class="custom-next"></div>',
+    prevArrow: '<div class="custom-prev"></div>',
+    infinite: false,
 
 })
