@@ -234,7 +234,7 @@ a{
             border: 1px solid transparent;
             transition: all .3s ease;
             cursor: pointer;
-            margin-right: 10px;
+            margin-right: 5px;
             text-align: center;
             position: relative;
             .hover-notice{
@@ -373,11 +373,10 @@ a{
     }
 }
 .slick-arrow{
-    width: 15px;
-    top: 58px;
-    height: 15px;
+    top: 60px;
+    width: 13px;
+    height: 13px;
     background: #fff;
-
     cursor: pointer;
     transition: all .3s ease;
 }
@@ -387,7 +386,7 @@ a{
     opacity: 0.5;
     border-radius: 50%;
     background: #fff;
-    border: 4px solid #333;
+    border: 3px solid #333;
     transform: rotateZ(180deg);
 }
 .custom-next{
@@ -425,9 +424,73 @@ a{
     width: 60%;
 }
 
-.jo-popup{
-    cursor: pointer;
+#rosetteDesigner{
+    .flex{
+        padding-top: 10px;
+    }
 }
+.rosette-choice-container{
+    padding: 5px;
+}
+.rosette-preview-parent{
+    height: 250px;
+    width: 250px;
+    position: relative;
+    border: 1px solid #fafafa;
+    padding: 5px;
+
+    .base-wood{
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url('../img/guitars/wood/sitka.jpg');
+    }
+    .soundhole{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        z-index: 5;
+        background-image: url('../img/guitars/wood/sitka.jpg');
+        border-radius: 50%;
+        .hole{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            height: 85%;
+            z-index: 5;
+            background: #111;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .hole:hover{
+            opacity: 0.9;
+        }
+    }
+    .rosette-main{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 65%;
+        height: 65%;
+        border-radius: 50%;
+        overflow: hidden;
+        background-image: url('../img/guitars/wood/macassar-ebony.jpg');
+        cursor: pointer;
+    }
+    .rosette-main:hover{
+        opacity: 0.9;
+    }
+}
+
+
 .right-float{
     position: absolute;
     border: 1px solid #eee;
@@ -435,10 +498,16 @@ a{
     right: 20px;
     top: 20px;
     font-family: Lato;
-
 }
+
 //pageBuilder
 
+.flex{
+    display: flex;
+}
+.jo-popup{
+    cursor: pointer;
+}
 #popupParent{
     position: fixed;
     width: 100%;
