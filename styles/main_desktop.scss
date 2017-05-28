@@ -224,7 +224,7 @@ a{
     }
     .choice-belt{
         padding-top: 10px;
-        width: 358px;
+        width: 340px;
         padding-left: 4px;
         margin-left: 20px;
         .choice-module{
@@ -254,15 +254,14 @@ a{
             img{
                 max-width: 100%;
                 max-height: 100%;
-                // opacity: 0.8;
                 transition: all .3s ease;
                 display: block;
-                padding-bottom: 5px;
+                padding-bottom: 3px;
             }
             .caption{
                 font-size: 11px;
                 text-align: left;
-                // position: relative;
+                opacity: 0.9;
             }
             .info{
                 display: none;
@@ -275,11 +274,10 @@ a{
             }
             .hover-notice{
                 opacity: 1;
-
             }
         }
         .choice-module.active{
-            border: 1px solid #555;
+            border: 1px solid #e0d8ce;
             img{
                 opacity: 1;
             }
@@ -292,7 +290,7 @@ a{
         padding: 0;
         transition: max-height .5s ease 0.5s;
         display: flex;
-        background: #f8f8f8;
+        background: #f7f4ee;
         position: relative;
         .disclaimer-caption{
             opacity: 0.5;
@@ -306,8 +304,8 @@ a{
             right: 20px;
             padding: 10px;
             // background: black;
-            border-left: 3px solid black;
-            border-bottom: 3px solid black;
+            border-left: 3px solid #692d2d;
+            border-bottom: 3px solid #692d2d;
             cursor: pointer;
             opacity: 0;
             transform: rotateZ(45deg);
@@ -316,10 +314,9 @@ a{
         img{
             max-width: 100%;
             display: block;
-            transition: all .3s ease;
+            transition: all .3s ease 0.2s, padding .3s ease 0s;
             position: relative;
             opacity: 0;
-            transition-delay: 0.2s;
             left: -100px;
         }
         .w60,.w25{
@@ -357,15 +354,16 @@ a{
         img{
             opacity: 1;
             left: 0;
+            padding: 5px;
         }
         .info-copy, .caption-copy{
-            opacity: 1;
+            opacity: 0.8;
             left: 0;
         }
         .close-btn{
             position: absolute;
             top: 20px;
-            padding: 6px;
+            padding: 5px;
             opacity: 1;
             transform: rotateZ(495deg);
         }
@@ -492,12 +490,88 @@ a{
 
 
 .right-float{
-    position: absolute;
+    position: fixed;
     border: 1px solid #eee;
-    padding: 20px;
-    right: 20px;
-    top: 20px;
+    padding: 10px 20px;
+    right: 200px;
+    top: 150px;
     font-family: Lato;
+    background: #f7f4ee;
+    width: 290px;
+    z-index: 5;
+    .title{
+        font-size: 24px;
+        margin-bottom: 5px;
+        font-family: Lato;
+    }
+    .wood-sel{
+        padding-left: 10px;
+    }
+    .form-group{
+        display: flex;
+        margin-top: 5px;
+        font-size: 13px;
+        align-items: baseline;
+    }
+    .price-container{
+        border-top: 1px solid rgba(0,0,0,0.5);
+        text-align: left;
+        margin: 10px 20px 10px 0;
+        padding: 5px 0;
+        font-size: 14px;
+    }
+    .caption{
+        width: 50%;
+        font-weight: bold;
+        font-family: Lato;
+        font-size: 12px;
+        opacity: 0.6;
+        padding-left: 5px;
+    }
+    #totalPrice{
+        float: right;
+    }
+}
+.hidden{
+    display: none;
+}
+.sound-simulator-parent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 65%;
+    padding: 10px 5px;
+    .title{
+        width: 100%;
+        font-weight: bold;
+        font-family: Lato;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    .sound-bar-parent{
+        position: relative;
+    }
+    .sound-bar{
+        width: 23px;
+        height: 60px;
+        background: rgba(200,200,200,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    .sound-caption{
+        top: 100%;
+        position: absolute;
+        font-size: 8px;
+    }
+    .filler{
+        width: 100%;
+        height: 60px;
+        background: rgba(200, 136, 50, 0.3);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: all .5s ease;
+    }
 }
 
 //pageBuilder

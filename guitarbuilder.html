@@ -56,6 +56,10 @@
                             <div class="caption">
                                 OM
                             </div>
+                            <div class="hidden tone-high">2</div>
+                            <div class="hidden tone-mid">2</div>
+                            <div class="hidden tone-low">-1</div>
+
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -63,6 +67,9 @@
                             <div class="caption">
                                 Dreadnaught
                             </div>
+                            <div class="hidden tone-high">1</div>
+                            <div class="hidden tone-mid">-1</div>
+                            <div class="hidden tone-low">3</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -70,6 +77,9 @@
                             <div class="caption">
                                 Grand Auditorium
                             </div>
+                            <div class="hidden tone-high">1</div>
+                            <div class="hidden tone-mid">0</div>
+                            <div class="hidden tone-low">3</div>
                         </div>
                     </div>
 
@@ -88,6 +98,9 @@
                             <div class="caption">
                                 Sitka Spruce
                             </div>
+                            <div class="hidden tone-high">1</div>
+                            <div class="hidden tone-mid">1</div>
+                            <div class="hidden tone-low">0</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -95,6 +108,9 @@
                             <div class="caption">
                                 Western Red Cedar
                             </div>
+                            <div class="hidden tone-high">0</div>
+                            <div class="hidden tone-mid">2</div>
+                            <div class="hidden tone-low">3</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -102,6 +118,9 @@
                             <div class="caption">
                                 Mahogany
                             </div>
+                            <div class="hidden tone-high">2</div>
+                            <div class="hidden tone-mid">2</div>
+                            <div class="hidden tone-low">2</div>
                         </div>
                     </div>
 
@@ -141,6 +160,9 @@
                             <div class="info">
                                 dummy rosewood info
                             </div>
+                            <div class="hidden tone-high">0</div>
+                            <div class="hidden tone-mid">2</div>
+                            <div class="hidden tone-low">1</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -150,7 +172,10 @@
                             </div>
                             <div class="info">
                                 dummy rosewood info
-                                </div>
+                            </div>
+                            <div class="hidden tone-high">1</div>
+                            <div class="hidden tone-mid">1</div>
+                            <div class="hidden tone-low">1</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -160,7 +185,10 @@
                             </div>
                             <div class="info">
                                 dummy rosewood info
-                                </div>
+                            </div>
+                            <div class="hidden tone-high">2</div>
+                            <div class="hidden tone-mid">2</div>
+                            <div class="hidden tone-low">2</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -170,7 +198,10 @@
                             </div>
                             <div class="info">
                                 dummy rosewood info
-                                </div>
+                            </div>
+                            <div class="hidden tone-high">-1</div>
+                            <div class="hidden tone-mid">2</div>
+                            <div class="hidden tone-low">0</div>
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
@@ -181,6 +212,9 @@
                             <div class="info">
                                 dummy ebony info
                             </div>
+                            <div class="hidden tone-high">0</div>
+                            <div class="hidden tone-mid">1</div>
+                            <div class="hidden tone-low">2</div>
                         </div>
                     </div>
 
@@ -302,7 +336,86 @@
 
             </div>
             <div class="right-float">
-                Guitar Summary
+                <div class="title">Guitar Summary</div>
+
+                <div class="form-group">
+                    <div class="caption">
+                        Body Style
+                    </div>
+                    <div class="wood-sel" id="bodySel">
+                        OM
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="caption">
+                        Sound Board
+                    </div>
+                    <div class="wood-sel" id="topSel">
+                        Spruce
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="caption">
+                        Back and Sides
+                    </div>
+                    <div class="wood-sel" id="backSel">
+                        Rosewood
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="caption">
+                        Binding and Purfling
+                    </div>
+                    <div class="wood-sel" id="bindingSel">
+                        Rosewood
+                    </div>
+                </div>
+
+                <div class="sound-simulator-parent">
+                    <div class="title">
+                        Tone Simulator
+                    </div>
+                    <div class="sound-bar-parent">
+                        <div class="sound-bar" id="hiBar">
+                            <div class="filler"></div>
+                        </div>
+                        <div class="sound-caption">High</div>
+                    </div>
+
+                    <div class="sound-bar-parent">
+                        <div class="sound-bar" id="hiMidBar">
+                            <div class="filler"></div>
+                        </div>
+                    </div>
+
+                    <div class="sound-bar-parent">
+                        <div class="sound-bar" id="midBar">
+                            <div class="filler"></div>
+                        </div>
+                        <div class="sound-caption">Mid</div>
+                    </div>
+
+                    <div class="sound-bar-parent">
+                        <div class="sound-bar" id="midLowBar">
+                            <div class="filler"></div>
+                        </div>
+                    </div>
+
+                    <div class="sound-bar-parent">
+                        <div class="sound-bar" id="lowBar">
+                            <div class="filler"></div>
+                        </div>
+                        <div class="sound-caption">Low</div>
+                    </div>
+                </div>
+
+                <div class="price-container">
+                    <span class="caption">Total Price</span>
+                    <span id="totalPrice">400$</span>
+                </div>
             </div>
         </div>
 
