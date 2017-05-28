@@ -54,6 +54,15 @@ function toneSim(){
     curLow = curLow + lowSel;
 }
 
+$('.rosette-main-choice').on('click', function(){
+    src = $(this).attr('src');
+
+    $('.rosette-main').css({
+        'background-image': 'url('+src+')'
+    });
+
+})
+
 
 
 $('.choice-module').on('click', function(){
@@ -82,6 +91,14 @@ $('.choice-module').on('click', function(){
             topSel.addClass('active');
             topSel.html(caption);
         }, 200);
+        src = $(this).find('img').attr('src');
+        console.log(src);
+        $('.base-wood').css({
+            'background-image': 'url('+src+')'
+        });
+        $('.soundhole').css({
+            'background-image': 'url('+src+')'
+        })
     }
     else if (segmentId == 'buildBody') {
         bodySel.removeClass('active');

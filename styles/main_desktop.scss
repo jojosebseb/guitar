@@ -355,7 +355,7 @@ a{
         transition-delay: 0s;
         img{
             opacity: 1;
-            left: 0;            
+            left: 0;
             transition-delay: 0s;
         }
         img.blink{
@@ -387,7 +387,6 @@ a{
             opacity: 1;
             transform: rotateZ(495deg);
         }
-
     }
 }
 .slick-arrow{
@@ -441,29 +440,95 @@ a{
 .w60{
     width: 60%;
 }
+.w100{
+    width: 100%;
+}
 
 #rosetteDesigner{
     .flex{
         padding-top: 10px;
     }
+    .eclipse-wood{
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotateZ(0deg);
+        background-image: url(../img/guitars/wood/rosewood.jpg);
+    }
 }
 .rosette-choice-container{
-    padding: 5px;
+    display: flex;
+    width: 70%;
+    padding: 10px;
+    flex-wrap: wrap;
+    .title{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .form-group{
+        padding: 5px;
+    }
+    .choice-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        img{
+            max-width: 37px;
+            max-height: 37px;
+            margin-left: 3px;
+            padding: 3px;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid #eee;
+        }
+    }
+
 }
 .rosette-preview-parent{
     height: 250px;
     width: 250px;
     position: relative;
     border: 1px solid #fafafa;
-    padding: 5px;
-
+    overflow: hidden;
+    .fretboard{
+        width: 65px;
+        height: 100px;
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: url(../img/guitars/wood/macassar-ebony.jpg);
+        z-index: 10;
+        border-radius: 5px;
+        border: 2px solid rgb(255, 223, 190);
+        border-top: 0;
+        box-shadow: 1px 0px 4px 0px rgba(0,0,0,0.5);
+        overflow: hidden;
+        .frets{
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: rgba(173, 181, 178, 0.66);
+            border-radius: 40%;
+        }
+        $elements: 5;
+        @for $i from 0 to $elements {
+          .frets:nth-child(#{$i}) {
+             bottom: (($i*15)) +px;
+          }
+        }
+    }
     .base-wood{
         position: relative;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        background-image: url('../img/guitars/wood/sitka.jpg');
+        background-image: url(../img/guitars/wood/sitka.jpg);
+        /* background-size: 50% 50%; */
+        background-position: 100% 50%;
     }
     .soundhole{
         position: absolute;
@@ -475,17 +540,19 @@ a{
         z-index: 5;
         background-image: url('../img/guitars/wood/sitka.jpg');
         border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.5);
         .hole{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 85%;
-            height: 85%;
+            width: 75%;
+            height: 75%;
             z-index: 5;
-            background: #111;
+            background: rgba(19, 18, 18, 0.93);
             border-radius: 50%;
             cursor: pointer;
+            box-shadow: inset 7px 4px 12px 5px rgba(0, 0, 0, 0.67);
         }
         .hole:hover{
             opacity: 0.9;
@@ -502,6 +569,8 @@ a{
         overflow: hidden;
         background-image: url('../img/guitars/wood/macassar-ebony.jpg');
         cursor: pointer;
+        border: 1px solid rgba(255,255,255,0.5);
+            background-size: 50% 50%;
     }
     .rosette-main:hover{
         opacity: 0.9;
