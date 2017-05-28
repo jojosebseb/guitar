@@ -2,7 +2,7 @@ var src, caption, info, thisInfo;
 var bodySel, topSel, backSel, bindingSel, segmentId;
 var curHigh, curMid, curLow, curId;
 
-var highSel, midSel, lowSel, soundBar;
+var highSel, midSel, lowSel, soundBar, totalMultiplier;
 
 var totalHigh;
 
@@ -17,20 +17,26 @@ bindingSel = $('#bindingSel');
 soundBar = $('.sound-bar');
 
 function toneBar(){
+
     $('#hiBar').find('.filler').css({
-        top: (100 - (curHigh*10))+'%'
+        top: (100 - (curHigh*10))+'%',
+        opacity: (curHigh+3)/10
     });
     $('#hiMidBar').find('.filler').css({
-        top: (100-((curHigh+curMid)/2)*10)+'%'
+        top: (100-((curHigh+curMid)/2)*10)+'%',
+        opacity: (curHigh+3)/10
     });
     $('#midBar').find('.filler').css({
-        top: (100 - (curMid*10))+'%'
+        top: (100 - (curMid*10))+'%',
+        opacity: (curMid+3)/10
     });
     $('#midLowBar').find('.filler').css({
-        top: (100-((curMid+curLow)/2)*10)+'%'
+        top: (100-((curMid+curLow)/2)*10)+'%',
+        opacity: (curLow+3)/10
     });
     $('#lowBar').find('.filler').css({
-        top: (100 - (curLow*10))+'%'
+        top: (100 - (curLow*10))+'%',
+        opacity: (curLow+3)/10
     });
 }
 
@@ -46,7 +52,6 @@ function toneSim(){
     curHigh = curHigh + highSel;
     curMid = curMid + midSel;
     curLow = curLow + lowSel;
-    console.log('high= '+curHigh);
 }
 
 
@@ -68,34 +73,36 @@ $('.choice-module').on('click', function(){
     toneSim();
     toneBar();
 
-
-
     //get segmentId to deteremine which part to be placed in the 'rightFloat'
     segmentId = $(this).parents('.build-tab').attr('id');
 
     if (segmentId == 'buildSoundBoard') {
-        topSel.html(caption);
+        topSel.removeClass('active');
+        setTimeout(function() {
+            topSel.addClass('active');
+            topSel.html(caption);
+        }, 200);
     }
     else if (segmentId == 'buildBody') {
-        bodySel.html(caption);
-        highSel = parseInt($(this).find('.tone-high').html());
-        midSel = parseInt($(this).find('.tone-mid').html());
-        lowSel = parseInt($(this).find('.tone-low').html());
-
-        curHigh = 5;
-        curMid = 5;
-        curLow = 5;
-
-        curHigh = curHigh + highSel;
-        curMid = curMid + midSel;
-        curLow = curLow + lowSel;
-
+        bodySel.removeClass('active');
+        setTimeout(function() {
+            bodySel.addClass('active');
+            bodySel.html(caption);
+        }, 200);
     }
     else if (segmentId == 'buildBackSides') {
-        backSel.html(caption);
+        backSel.removeClass('active');
+        setTimeout(function() {
+            backSel.addClass('active');
+            backSel.html(caption);
+        }, 200);
     }
     else if (segmentId == 'bindingBuild') {
-        bindingSel.html(caption);
+        bindingSel.removeClass('active');
+        setTimeout(function() {
+            bindingSel.addClass('active');
+            bindingSel.html(caption);
+        }, 200);
     }
 })
 
@@ -104,12 +111,27 @@ $('.choice-module').on('click', function(){
 $('.hover-notice').on('click', function(){
     thisInfo = $(this).parents('.build-tab').find('.info-container');
     thisInfo.addClass('active');
+
     src = $(this).parent().find('img').attr('src');
     caption = $(this).parent().find('.caption').html();
     info = $(this).parent().find('.info').html();
-    thisInfo.find('img').attr('src', src);
-    thisInfo.find('.caption-copy').html(caption);
-    thisInfo.find('.info-copy').html(info);
+
+    thisInfo.find('.caption-copy').addClass('blink');
+    thisInfo.find('.info-copy').addClass('blink');
+    thisInfo.find('img').addClass('blink');
+
+    setTimeout(function() {
+        thisInfo.find('.caption-copy').html(caption);
+        thisInfo.find('.info-copy').html(info);
+        thisInfo.find('img').attr('src', src);
+
+        thisInfo.find('.caption-copy').removeClass('blink');
+        thisInfo.find('.info-copy').removeClass('blink');
+        thisInfo.find('img').removeClass('blink');
+    }, 500);
+
+
+
 })
 
 $('.close-btn').on('click', function(){
@@ -124,7 +146,7 @@ $('.jo-popup-parent').on('click', function(){
 })
 
 $('.choice-belt').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
     nextArrow: '<div class="custom-next"></div>',
