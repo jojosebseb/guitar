@@ -313,7 +313,7 @@
                     </div>
 
                     <div class="flex">
-                        <div class="rosette-preview-parent standard">
+                        <div class="rosette-preview-parent">
                             <div class="fretboard">
                                 <div class="frets"></div>
                                 <div class="frets"></div>
@@ -322,20 +322,35 @@
                                 <div class="frets"></div>
                             </div>
                             <div class="base-wood">
-                                <div class="soundhole">
-                                    <div class="hole"></div>
+                                <div class="soundhole ring">
                                 </div>
-                                <div class="rosette-main">
-                                    <div class="eclipse-wood"></div>
-                                </div>
+                                <div id="rosetteMainParent" class="ring Small standard">
+                                    <div class="base-wood ring"></div>
+                                    <div class="ros-style-parent" id="standardRosette">
+                                        <div class="inner-ring purfling ring"></div>
+                                        <div class="middle-ring purfling ring"></div>
+                                        <div class="outer-ring purfling ring"></div>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
 
                         <div class="rosette-choice-container">
                             <div class="w100">
                                 <div class="title">
-                                    Main
+                                    Size
+                                </div>
+                                <div class="choice-container" id="rosetteSizeForm">
+                                    <div class="button-choice active">
+                                        Small
+                                    </div>
+                                    <div class="button-choice">
+                                        Medium
+                                    </div>
+                                    <div class="button-choice">
+                                        Large
+                                    </div>
                                 </div>
                             </div>
                             <div class="w40">

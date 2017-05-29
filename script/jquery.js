@@ -54,15 +54,6 @@ function toneSim(){
     curLow = curLow + lowSel;
 }
 
-$('.rosette-main-choice').on('click', function(){
-    src = $(this).attr('src');
-
-    $('.rosette-main').css({
-        'background-image': 'url('+src+')'
-    });
-
-})
-
 
 
 $('.choice-module').on('click', function(){
@@ -92,13 +83,9 @@ $('.choice-module').on('click', function(){
             topSel.html(caption);
         }, 200);
         src = $(this).find('img').attr('src');
-        console.log(src);
         $('.base-wood').css({
             'background-image': 'url('+src+')'
         });
-        $('.soundhole').css({
-            'background-image': 'url('+src+')'
-        })
     }
     else if (segmentId == 'buildBody') {
         bodySel.removeClass('active');
@@ -113,6 +100,10 @@ $('.choice-module').on('click', function(){
             backSel.addClass('active');
             backSel.html(caption);
         }, 200);
+        src = $(this).find('img').attr('src');
+        $('.soundhole').css({
+            'background-image': 'url('+src+')'
+        });
     }
     else if (segmentId == 'bindingBuild') {
         bindingSel.removeClass('active');
@@ -170,4 +161,17 @@ $('.choice-belt').slick({
     prevArrow: '<div class="custom-prev"></div>',
     infinite: false,
 
+})
+
+var curChoice;
+
+$('.button-choice').on('click', function(){
+    curId = $(this).parent().attr('id');
+    curChoice = $(this).html();
+    $('.button-choice').removeClass('active');
+    $(this).addClass('active');
+    if (curId == "rosetteSizeForm") {
+        $('#rosetteMainParent').removeClass('Small Medium Large')
+        $('#rosetteMainParent').addClass(curChoice);
+    }
 })

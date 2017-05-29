@@ -226,7 +226,7 @@ a {
 
 .left-container .choice-belt {
   padding-top: 10px;
-  width: 358px;
+  width: 450px;
   padding-left: 4px;
   margin-left: 20px;
 }
@@ -263,12 +263,13 @@ a {
   max-height: 100%;
   transition: all .3s ease;
   display: block;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 }
 
 .left-container .choice-belt .choice-module .caption {
   font-size: 11px;
   text-align: left;
+  opacity: 0.9;
 }
 
 .left-container .choice-belt .choice-module .info {
@@ -288,7 +289,7 @@ a {
 }
 
 .left-container .choice-belt .choice-module.active {
-  border: 1px solid #555;
+  border: 1px solid #e0d8ce;
 }
 
 .left-container .choice-belt .choice-module.active img {
@@ -302,7 +303,7 @@ a {
   padding: 0;
   transition: max-height .5s ease 0.5s;
   display: flex;
-  background: #f8f8f8;
+  background: #f7f4ee;
   position: relative;
 }
 
@@ -318,8 +319,8 @@ a {
   top: -120px;
   right: 20px;
   padding: 10px;
-  border-left: 3px solid black;
-  border-bottom: 3px solid black;
+  border-left: 3px solid #692d2d;
+  border-bottom: 3px solid #692d2d;
   cursor: pointer;
   opacity: 0;
   transform: rotateZ(45deg);
@@ -329,15 +330,18 @@ a {
 .left-container .info-container img {
   max-width: 100%;
   display: block;
-  transition: all .3s ease;
+  transition: all .3s ease 0.2s, padding .3s ease 0s;
   position: relative;
   opacity: 0;
-  transition-delay: 0.2s;
   left: -100px;
 }
 
-.left-container .info-container .w60, .left-container .info-container .w25 {
+.left-container .info-container .w25 {
   padding: 20px 20px 15px 20px;
+}
+
+.left-container .info-container .w60 {
+  padding: 30px 0;
 }
 
 .left-container .info-container .caption-copy {
@@ -373,17 +377,40 @@ a {
 .left-container .info-container.active img {
   opacity: 1;
   left: 0;
+  transition-delay: 0s;
 }
 
-.left-container .info-container.active .info-copy, .left-container .info-container.active .caption-copy {
-  opacity: 1;
+.left-container .info-container.active img.blink {
+  left: -20px;
+  opacity: 0;
+}
+
+.left-container .info-container.active .caption-copy {
+  opacity: 0.8;
   left: 0;
+  transition-delay: 0s;
+}
+
+.left-container .info-container.active .info-copy {
+  opacity: 0.8;
+  left: 0;
+  transition: all .5s ease 0.1s;
+}
+
+.left-container .info-container.active .info-copy.blink {
+  opacity: 0;
+  left: 15px;
+}
+
+.left-container .info-container.active .caption-copy.blink {
+  opacity: 0;
+  left: 10px;
 }
 
 .left-container .info-container.active .close-btn {
   position: absolute;
   top: 20px;
-  padding: 6px;
+  padding: 5px;
   opacity: 1;
   transform: rotateZ(495deg);
 }
@@ -449,12 +476,64 @@ a {
   width: 60%;
 }
 
+.w100 {
+  width: 100%;
+}
+
 #rosetteDesigner .flex {
   padding-top: 10px;
 }
 
+#rosetteDesigner .eclipse-wood {
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  background-image: url(../img/guitars/wood/rosewood.jpg);
+}
+
 .rosette-choice-container {
+  display: flex;
+  width: 70%;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.rosette-choice-container .title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.rosette-choice-container .form-group {
   padding: 5px;
+}
+
+.rosette-choice-container .choice-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rosette-choice-container .choice-container img {
+  max-width: 37px;
+  max-height: 37px;
+  margin-left: 3px;
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+
+.rosette-choice-container .button-choice {
+  font-size: 13px;
+  margin-left: 10px;
+  cursor: pointer;
+  padding-bottom: 3px;
+}
+
+.rosette-choice-container .button-choice.active {
+  border-bottom: 1px solid #333;
 }
 
 .rosette-preview-parent {
@@ -462,7 +541,52 @@ a {
   width: 250px;
   position: relative;
   border: 1px solid #fafafa;
-  padding: 5px;
+  overflow: hidden;
+}
+
+.rosette-preview-parent .fretboard {
+  width: 70px;
+  height: 100px;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../img/guitars/wood/macassar-ebony.jpg);
+  z-index: 10;
+  border-radius: 4px;
+  border: 3px solid #ffdfbe;
+  border-bottom: 2px solid black;
+  border-top: 0;
+  box-shadow: 1px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.rosette-preview-parent .fretboard .frets {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(173, 181, 178, 0.66);
+  border-radius: 40%;
+}
+
+.rosette-preview-parent .fretboard .frets:nth-child(0) {
+  bottom: 0px;
+}
+
+.rosette-preview-parent .fretboard .frets:nth-child(1) {
+  bottom: 15px;
+}
+
+.rosette-preview-parent .fretboard .frets:nth-child(2) {
+  bottom: 30px;
+}
+
+.rosette-preview-parent .fretboard .frets:nth-child(3) {
+  bottom: 45px;
+}
+
+.rosette-preview-parent .fretboard .frets:nth-child(4) {
+  bottom: 60px;
 }
 
 .rosette-preview-parent .base-wood {
@@ -471,62 +595,213 @@ a {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url("../img/guitars/wood/sitka.jpg");
+  background-image: url(../img/guitars/wood/sitka.jpg);
+  background-position: center center;
+  transition: all .3s ease;
 }
 
 .rosette-preview-parent .soundhole {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+  width: 90px;
+  height: 90px;
   z-index: 5;
-  background-image: url("../img/guitars/wood/sitka.jpg");
-  border-radius: 50%;
+  box-shadow: inset 20px 20px 80px 15px rgba(0, 0, 0, 0.9);
+  background-size: contain;
+  background-position: center center;
+  transition: all .3s ease;
+  background-image: url(../img/guitars/wood/rosewood.jpg);
 }
 
-.rosette-preview-parent .soundhole .hole {
+.rosette-preview-parent .soundhole .logo-container {
+  font-size: 14px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%;
-  height: 85%;
-  z-index: 5;
-  background: #111;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
-.rosette-preview-parent .soundhole .hole:hover {
-  opacity: 0.9;
-}
-
-.rosette-preview-parent .rosette-main {
+.rosette-preview-parent .ring {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 65%;
-  height: 65%;
   border-radius: 50%;
+}
+
+.rosette-preview-parent #rosetteMainParent {
+  position: absolute;
+  transition: all .3s ease;
+  background-size: contain;
   overflow: hidden;
-  background-image: url("../img/guitars/wood/macassar-ebony.jpg");
-  cursor: pointer;
 }
 
-.rosette-preview-parent .rosette-main:hover {
-  opacity: 0.9;
+.rosette-preview-parent #rosetteMainParent .base-wood {
+  width: 110px;
+  height: 110px;
+  background-size: 500px;
+  z-index: 5;
+}
+
+.rosette-preview-parent #rosetteMainParent.Small {
+  height: 55%;
+  width: 55%;
+}
+
+.rosette-preview-parent #rosetteMainParent.Medium {
+  height: 60%;
+  width: 60%;
+}
+
+.rosette-preview-parent #rosetteMainParent.Large {
+  height: 70%;
+  width: 70%;
+}
+
+.rosette-preview-parent .ros-style-parent {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+#standardRosette .ring {
+  background-size: 250px;
+  background-position: center center;
+  transition: all .3s ease;
+}
+
+#standardRosette .purfling {
+  border: 1px solid #eee;
+}
+
+#standardRosette .inner-ring {
+  width: 119px;
+  height: 119px;
+  z-index: 4;
+  background-image: url(../img/guitars/wood/macassar-ebony.jpg);
+}
+
+#standardRosette .middle-ring {
+  z-index: 3;
+  width: 95%;
+  height: 95%;
+  background-image: url(../img/guitars/wood/mahogany.jpg);
+}
+
+#standardRosette .outer-ring {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/guitars/wood/macassar-ebony.jpg);
+}
+
+#rosetteMainParent.standard #standardRosette {
+  display: block;
 }
 
 .right-float {
-  position: absolute;
-  border: 1px solid #eee;
-  padding: 20px;
-  right: 20px;
-  top: 20px;
+  position: fixed;
+  padding: 10px 20px;
+  right: 8%;
+  top: 20%;
   font-family: Lato;
+  background: #f7f4ee;
+  width: 290px;
+  z-index: 5;
+  box-shadow: 4px 4px 10px 0px rgba(80, 80, 80, 0.18);
+}
+
+.right-float .title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-family: Lato;
+}
+
+.right-float .wood-sel {
+  position: relative;
+  opacity: 0;
+  left: 15px;
+  transition: all .3s ease;
+}
+
+.right-float .wood-sel.active {
+  opacity: 1;
+  left: 10px;
+}
+
+.right-float .form-group {
+  display: flex;
+  margin-top: 5px;
+  font-size: 13px;
+  align-items: baseline;
+}
+
+.right-float .price-container {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  text-align: left;
+  margin: 10px 20px 10px 0;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.right-float .caption {
+  width: 50%;
+  font-weight: bold;
+  font-family: Lato;
+  font-size: 12px;
+  opacity: 0.6;
+  padding-left: 5px;
+}
+
+.right-float #totalPrice {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.sound-simulator-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 55%;
+  padding: 10px 5px;
+  margin: 10px 0;
+}
+
+.sound-simulator-parent .title {
+  width: 100%;
+  font-weight: bold;
+  font-family: Lato;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.sound-simulator-parent .sound-bar-parent {
+  position: relative;
+  width: 18%;
+}
+
+.sound-simulator-parent .sound-bar {
+  width: 100%;
+  height: 70px;
+  background: rgba(200, 200, 200, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.sound-simulator-parent .sound-caption {
+  top: 100%;
+  position: absolute;
+  font-size: 8px;
+}
+
+.sound-simulator-parent .filler {
+  width: 100%;
+  height: 70px;
+  background: rgba(234, 139, 39, 0.77);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: all 0.7s cubic-bezier(0.57, -0.1, 0.26, 1.01);
 }
 
 .flex {
