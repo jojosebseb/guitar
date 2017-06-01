@@ -175,3 +175,41 @@ $('.button-choice').on('click', function(){
         $('#rosetteMainParent').addClass(curChoice);
     }
 })
+
+$('.style-able').on('click', function(){
+    $('.style-able').removeClass('active');
+    $(this).addClass('active');
+})
+
+$('#rosetteSelector').on('change', function(){
+    curChoice = $(this).val();
+    $('#rosetteMainParent').removeClass('standard radial looper mozaic');
+    $('#rosetteMainParent').addClass(curChoice);
+
+})
+
+$('.rosette-main-choice').on('click', function(){
+    src = $(this).attr('src');
+    $('.ros-style-parent').find('.style-able.active').css({
+        'background-image': 'url('+src+')'
+    })
+})
+
+var color;
+
+function colorPallet(){
+    $('.color-pallet').each(function(){
+        color = $(this).find('.hex').html();
+        $(this).css({
+            'background-color': color
+        })
+    })
+}
+colorPallet();
+
+$('.color-pallet').on('click', function(){
+    color = $(this).find('.hex').html();
+    $('.purfling').css({
+        'border-color': color
+    })
+})

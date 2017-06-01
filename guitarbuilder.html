@@ -124,9 +124,9 @@
                         </div>
                         <div class="choice-module">
                             <div class="hover-notice">?</div>
-                            <img src="img/guitars/wood/curly-maple.jpg" alt="">
+                            <img src="img/guitars/wood/maple.jpg" alt="">
                             <div class="caption">
-                                Curly Maple
+                                Maple
                             </div>
                             <div class="hidden tone-high">2</div>
                             <div class="hidden tone-mid">2</div>
@@ -325,12 +325,42 @@
                             <div class="base-wood">
                                 <div class="soundhole ring">
                                 </div>
-                                <div id="rosetteMainParent" class="ring Small standard">
+                                <div id="rosetteMainParent" class="ring Small mozaic">
                                     <div class="base-wood ring"></div>
                                     <div class="ros-style-parent" id="standardRosette">
-                                        <div class="inner-ring purfling ring"></div>
-                                        <div class="middle-ring purfling ring"></div>
-                                        <div class="outer-ring purfling ring"></div>
+                                        <div class="inner-ring purfling ring style-able"></div>
+                                        <div class="middle-ring purfling ring style-able"></div>
+                                        <div class="outer-ring purfling ring style-able"></div>
+                                    </div>
+                                    <div class="ros-style-parent" id="radialRosette">
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="base-wood ring purfling"></div>
+                                        <div class="base-wood-layer style-able purfling"></div>
+                                    </div>
+
+                                    <div class="ros-style-parent" id="looperRosette">
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="fragments purfling style-able"></div>
+                                        <div class="base-wood ring purfling"></div>
+                                        <div class="base-wood-layer style-able purfling"></div>
+                                    </div>
+
+                                    <div class="ros-style-parent" id="mozaicRosette">
+                                        <div class="fragments purfling style-able"><div class="black-stripe purfling style-able"></div></div>
+                                        <div class="fragments purfling style-able"><div class="black-stripe purfling style-able"></div></div>
+                                        <div class="fragments purfling style-able"><div class="black-stripe purfling style-able"></div></div>
+                                        <div class="fragments purfling style-able"><div class="black-stripe purfling style-able"></div></div>
+                                        <div class="fragments purfling style-able"><div class="black-stripe purfling style-able"></div></div>
+
+                                        <div class="base-wood ring purfling"></div>
+                                        <div class="base-wood-layer style-able purfling"></div>
                                     </div>
 
                                 </div>
@@ -338,7 +368,18 @@
                         </div>
 
                         <div class="rosette-choice-container">
-                            <div class="w100">
+                            <div class="w40">
+                                <div class="title">
+                                    Style
+                                    <select id="rosetteSelector" name="">
+                                        <option value="standard">Standard</option>
+                                        <option value="radial">Radial</option>
+                                        <option value="looper">Looper</option>
+                                        <option value="mozaic">Mozaic</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="w40">
                                 <div class="title">
                                     Size
                                 </div>
@@ -354,14 +395,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w40">
+                            <div class="w100">
                                 <div class="title">
                                     Main Wood
                                 </div>
                                 <div class="choice-container" id="mainRosette">
-                                    <div class="form-group">
-                                        Purfling :
-                                    </div>
 
                                     <div class="form-group">
                                         <img src="img/guitars/wood/mahogany.jpg" alt="" class="rosette-main-choice">
@@ -374,15 +412,33 @@
                                         <img src="img/guitars/wood/curly-maple.jpg" alt="" class="rosette-main-choice">
                                         <img src="img/guitars/wood/macassar-ebony.jpg" alt="" class="rosette-main-choice">
                                         <img src="img/guitars/wood/spalted-maple.jpg" alt="" class="rosette-main-choice">
+                                        <img src="img/guitars/wood/paua-abalone.jpg" alt="" class="rosette-main-choice">
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="w40">
+
+                            <div class="w100">
                                 <div class="title">
-                                    Main Wood
+                                    Purfling Color
+                                </div>
+                                <div class="choice-container" id="mainRosette">
+
+                                    <div class="form-group">
+                                        <div class="color-pallet">
+                                            <div class="hex">#eee</div>
+                                        </div>
+                                        <div class="color-pallet">
+                                            <div class="hex">#222</div>
+                                        </div>
+                                        <div class="color-pallet">
+                                            <div class="hex">transparent</div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
