@@ -399,7 +399,7 @@ $container-width: 1100px;
             border: 1px solid black;
             font-size: 12px;
             padding: 5px 0;
-            width: 90%;
+            width: 100%;
             text-align: center;
             margin: auto;
             margin-top: 5px;
@@ -435,10 +435,9 @@ $container-width: 1100px;
         }
         .float-detail{
             // position: absolute;
-            top: 100%;
             text-align: left;
             border-top: 1px solid #eee;
-            width: 95%;
+            width: 85%;
             margin: auto;
             display: flex;
             flex-wrap: wrap;
