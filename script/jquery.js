@@ -1,215 +1,35 @@
-var src, caption, info, thisInfo;
-var bodySel, topSel, backSel, bindingSel, segmentId;
-var curHigh, curMid, curLow, curId;
-
-var highSel, midSel, lowSel, soundBar, totalMultiplier;
-
-var totalHigh;
-
-curHigh = 0;
-curMid = 0;
-curLow = 0;
-
-bodySel = $('#bodySel');
-topSel = $('#topSel');
-backSel = $('#backSel');
-bindingSel = $('#bindingSel');
-soundBar = $('.sound-bar');
-
-function toneBar(){
-
-    $('#hiBar').find('.filler').css({
-        top: (100 - (curHigh*10))+'%',
-        opacity: (curHigh+3)/10
-    });
-    $('#hiMidBar').find('.filler').css({
-        top: (100-((curHigh+curMid)/2)*10)+'%',
-        opacity: (curHigh+3)/10
-    });
-    $('#midBar').find('.filler').css({
-        top: (100 - (curMid*10))+'%',
-        opacity: (curMid+3)/10
-    });
-    $('#midLowBar').find('.filler').css({
-        top: (100-((curMid+curLow)/2)*10)+'%',
-        opacity: (curLow+3)/10
-    });
-    $('#lowBar').find('.filler').css({
-        top: (100 - (curLow*10))+'%',
-        opacity: (curLow+3)/10
-    });
+if($(window).scrollTop() > 0) {
+   console.log('asd');
 }
 
-function toneSim(){
-    $.each( $('.choice-module'), function(i){
-        if ($(this).hasClass('active')) {
-            highSel+= parseInt($(this).find('.tone-high').html(), 10);
-            midSel+= parseInt($(this).find('.tone-mid').html(), 10);
-            lowSel+= parseInt($(this).find('.tone-low').html(), 10);
-        }
-    })
-
-    curHigh = curHigh + highSel;
-    curMid = curMid + midSel;
-    curLow = curLow + lowSel;
-}
-
-
-
-$('.choice-module').on('click', function(){
-    $(this).parents('.build-tab').find('.choice-module').removeClass('active');
-    $(this).parents('.build-tab').addClass('active');
-    $(this).addClass('active');
-    caption = $(this).find('.caption').html();
-    $(this).parents('.build-tab').find('.selected-title-summary').html(caption);
-    $(this).parents('.build-tab').find('.title').addClass('active');
-
-    highSel = 0;
-    midSel = 0;
-    lowSel = 0;
-    curHigh = 0;
-    curMid = 0;
-    curLow = 0;
-    toneSim();
-    toneBar();
-
-    //get segmentId to deteremine which part to be placed in the 'rightFloat'
-    segmentId = $(this).parents('.build-tab').attr('id');
-
-    if (segmentId == 'buildSoundBoard') {
-        topSel.removeClass('active');
-        setTimeout(function() {
-            topSel.addClass('active');
-            topSel.html(caption);
-        }, 200);
-        src = $(this).find('img').attr('src');
-        $('.base-wood').css({
-            'background-image': 'url('+src+')'
-        });
+$(window).scroll(function(){
+    if($(window).scrollTop() > 120) {
+       $('#navbar').addClass('scrolled');
     }
-    else if (segmentId == 'buildBody') {
-        bodySel.removeClass('active');
-        setTimeout(function() {
-            bodySel.addClass('active');
-            bodySel.html(caption);
-        }, 200);
-    }
-    else if (segmentId == 'buildBackSides') {
-        backSel.removeClass('active');
-        setTimeout(function() {
-            backSel.addClass('active');
-            backSel.html(caption);
-        }, 200);
-        src = $(this).find('img').attr('src');
-        $('.soundhole').css({
-            'background-image': 'url('+src+')'
-        });
-    }
-    else if (segmentId == 'bindingBuild') {
-        bindingSel.removeClass('active');
-        setTimeout(function() {
-            bindingSel.addClass('active');
-            bindingSel.html(caption);
-        }, 200);
+    else {
+        $('#navbar').removeClass('scrolled');
     }
 })
-
-
-
-$('.hover-notice').on('click', function(){
-    thisInfo = $(this).parents('.build-tab').find('.info-container');
-    thisInfo.addClass('active');
-
-    src = $(this).parent().find('img').attr('src');
-    caption = $(this).parent().find('.caption').html();
-    info = $(this).parent().find('.info').html();
-
-    thisInfo.find('.caption-copy').addClass('blink');
-    thisInfo.find('.info-copy').addClass('blink');
-    thisInfo.find('img').addClass('blink');
-
-    setTimeout(function() {
-        thisInfo.find('.caption-copy').html(caption);
-        thisInfo.find('.info-copy').html(info);
-        thisInfo.find('img').attr('src', src);
-
-        thisInfo.find('.caption-copy').removeClass('blink');
-        thisInfo.find('.info-copy').removeClass('blink');
-        thisInfo.find('img').removeClass('blink');
-    }, 500);
-
-
-
-})
-
-$('.close-btn').on('click', function(){
-    $(this).parent().removeClass('active');
-    $(this).parents('#popupParent').removeClass('active');
-})
-
-$('.jo-popup-parent').on('click', function(){
-    src = $(this).find('.jo-popup').attr('src');
-    $('#popupParent').addClass('active');
-    $('#popupParent img').attr('src', src);
-})
-
-$('.choice-belt').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: true,
-    nextArrow: '<div class="custom-next"></div>',
-    prevArrow: '<div class="custom-prev"></div>',
-    infinite: false,
-
-})
-
-var curChoice;
-
-$('.button-choice').on('click', function(){
-    curId = $(this).parent().attr('id');
-    curChoice = $(this).html();
-    $('.button-choice').removeClass('active');
-    $(this).addClass('active');
-    if (curId == "rosetteSizeForm") {
-        $('#rosetteMainParent').removeClass('Small Medium Large')
-        $('#rosetteMainParent').addClass(curChoice);
-    }
-})
-
-$('.style-able').on('click', function(){
-    $('.style-able').removeClass('active');
-    $(this).addClass('active');
-})
-
-$('#rosetteSelector').on('change', function(){
-    curChoice = $(this).val();
-    $('#rosetteMainParent').removeClass('standard radial looper mozaic');
-    $('#rosetteMainParent').addClass(curChoice);
-
-})
-
-$('.rosette-main-choice').on('click', function(){
-    src = $(this).attr('src');
-    $('.ros-style-parent').find('.style-able.active').css({
-        'background-image': 'url('+src+')'
+var src;
+$('.product-thumbnail > .thumbnail-module').on('click', function(){
+    src = $(this).find('img').attr('src');
+    $('#productShow').attr('src', src);
+    $('#productShow').addClass('hide');
+    $('.product-big').css({
+        'background-image' : 'url('+src+')'
     })
 })
 
-var color;
-
-function colorPallet(){
-    $('.color-pallet').each(function(){
-        color = $(this).find('.hex').html();
-        $(this).css({
-            'background-color': color
+var curBadge;
+function badge(){
+    $('.badge-container').each(function(){
+        $(this).find('.badge').each(function(i){
+            $(this).css({
+                'transition-delay': i/10 +'s'
+            })
         })
     })
-}
-colorPallet();
 
-$('.color-pallet').on('click', function(){
-    color = $(this).find('.hex').html();
-    $('.purfling').css({
-        'border-color': color
-    })
-})
+}
+
+badge();
