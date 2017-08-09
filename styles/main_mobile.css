@@ -677,7 +677,7 @@ a {
 }
 
 #namingParent .name-example {
-  font-size: 50px;
+  font-size: 80px;
   font-family: NotoBold;
   margin-top: 30px;
 }
@@ -685,12 +685,14 @@ a {
 #namingParent .name-example span {
   position: relative;
   padding: 0px 0;
-  margin: -4px;
+  margin: -10px;
+  line-height: 30px;
+  padding-bottom: 5px;
 }
 
 #namingParent .name-example span:after {
   font-family: SourceSans;
-  font-size: 10px;
+  font-size: 11px;
   position: absolute;
   bottom: 0;
   left: 50%;
