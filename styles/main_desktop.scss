@@ -143,6 +143,7 @@ $container-width: 1100px;
 
 //parentContainer
 #parentContainer{
+    background-size: 100px;
     min-height: 95vh;
     background: white;
     position: relative;
@@ -521,7 +522,178 @@ $container-width: 1100px;
 }
 //tonewoodParent
 .disclaimer{
+    width: $container-width;
+    margin: auto;
     font-size: 11px;
     font-family: NotoReg;
     padding-top: 10px;
+    text-align: left;
+    // width: 100%;
+    a{
+        display: inline-block;
+        text-decoration: underline;
+    }
 }
+
+//featureParent
+#shapeParent{
+    padding-bottom: 70px;
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .shape-group{
+        display: flex;
+        font-family: NotoReg;
+        align-items: flex-start;
+        // max-height: 314px;
+        // margin-top: 50px;
+        margin-bottom: 40px;
+        justify-content: center;
+        // border-bottom: 1px solid #eee;
+        width: 47%;
+        .shape-img{
+            width: 40%;
+            img{
+                display: block;
+                margin: auto;
+                width: 100%;
+                filter: grayscale(40%);
+            }
+        }
+        .shape-paragraph{
+            width: 60%;
+            padding-top: 20px;
+            .shape-title{
+                font-family: NotoBold;
+                padding-bottom: 5px;
+                font-size: 17px;
+                display: inline-block;
+                border-bottom: 1px solid #aaa;
+                padding-right: 5px;
+            }
+            .shape-text{
+                padding-top: 10px;
+                font-size: 13px;
+            }
+        }
+        .shape-specs{
+            display: flex;
+            padding-top: 10px;
+            flex-wrap: wrap;
+            .spec-group{
+                display: flex;
+                width: 100%;
+                font-size: 14px;
+                font-family: SourceSans;
+                margin-bottom: 1px;
+                align-items: baseline;
+                .spec-title{
+                    font-size: 13px;
+                    font-family: NotoBold;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+#bracingParent{
+    // padding-bottom: 40px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#namingParent{
+    margin: 50px 0;
+    padding-bottom: 40px;
+    text-align: center;
+    .black-bg{
+        color: white;
+        background: #191919;
+        padding: 50px;
+        margin-bottom: 20px;
+    }
+    .name-example{
+        font-size: 50px;
+        font-family: NotoBold;
+        margin-top: 30px;
+        span{
+            position: relative;
+            padding: 0px 0;
+            // filter:  grayscale(90%);
+            margin: -4px;
+        }
+        span:after{
+            font-family: SourceSans;
+            font-size: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            width: 100px;
+        }
+        .shape{
+            color: rgba(227, 208, 140, 0.78);
+        }
+        .shape:after{
+            content: "Shape Code";
+            top: 0;
+        }
+        .soundboard{
+            color: rgba(225,225,225, 0.8);
+        }
+        .soundboard:after{
+            content: "Soundboard";
+        }
+        .bodywood{
+            color: rgba(241, 245, 196, 0.78);
+        }
+        .bodywood:after{
+            content: "Bodywood";
+            top: 0;
+        }
+        .extras{
+            color: rgba(229, 182, 230, 0.71);
+        }
+        .extras:after{
+            content: "Features"
+        }
+
+    }
+    .table-parent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .group-parent{
+            width: 25%;
+        }
+        .table-group{
+            width: 100%;
+            display: flex;
+            font-family: NotoBold;
+            align-items: baseline;
+            // border: 1px solid #aaa;
+            // margin: 2px 1px;
+            .code-name{
+                width: 45px;
+                font-size: 14px;
+                text-align: right;
+                padding: 5px 0;
+                padding-right: 5px;
+                border-right: 1px solid #aaa;
+            }
+            .full-name{
+                font-family: SourceSans;
+                padding-left: 4px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+//featureParent

@@ -556,7 +556,192 @@ a {
 }
 
 .disclaimer {
+  width: 100%;
+  margin: auto;
   font-size: 11px;
   font-family: NotoReg;
   padding-top: 10px;
+  text-align: left;
+}
+
+.disclaimer a {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+#shapeParent {
+  padding-bottom: 70px;
+}
+
+#shapeParent .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#shapeParent .shape-group {
+  display: flex;
+  font-family: NotoReg;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+#shapeParent .shape-group .shape-img {
+  width: 45%;
+}
+
+#shapeParent .shape-group .shape-img img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  filter: grayscale(40%);
+}
+
+#shapeParent .shape-group .shape-paragraph {
+  width: 55%;
+  padding-bottom: 10px;
+}
+
+#shapeParent .shape-group .shape-paragraph .shape-title {
+  font-family: NotoBold;
+  padding-bottom: 5px;
+  font-size: 15px;
+  display: inline-block;
+  border-bottom: 1px solid #aaa;
+}
+
+#shapeParent .shape-group .shape-paragraph .shape-text {
+  padding-top: 3px;
+  font-size: 12px;
+}
+
+#shapeParent .shape-group .shape-specs {
+  display: flex;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+
+#shapeParent .shape-group .shape-specs .spec-group {
+  display: flex;
+  width: 100%;
+  font-size: 13px;
+  font-family: SourceSans;
+  margin-bottom: 1px;
+  align-items: baseline;
+}
+
+#shapeParent .shape-group .shape-specs .spec-group .spec-title {
+  font-size: 13px;
+  font-family: NotoBold;
+  padding-right: 5px;
+}
+
+#bracingParent .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#namingParent {
+  margin: 50px 0;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+#namingParent .black-bg {
+  color: white;
+  background: #191919;
+  padding: 50px;
+  margin-bottom: 20px;
+}
+
+#namingParent .name-example {
+  font-size: 50px;
+  font-family: NotoBold;
+  margin-top: 30px;
+}
+
+#namingParent .name-example span {
+  position: relative;
+  padding: 0px 0;
+  margin: -4px;
+}
+
+#namingParent .name-example span:after {
+  font-family: SourceSans;
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  width: 100px;
+}
+
+#namingParent .name-example .shape {
+  color: rgba(227, 208, 140, 0.78);
+}
+
+#namingParent .name-example .shape:after {
+  content: "Shape Code";
+  top: 0;
+}
+
+#namingParent .name-example .soundboard {
+  color: rgba(225, 225, 225, 0.8);
+}
+
+#namingParent .name-example .soundboard:after {
+  content: "Soundboard";
+}
+
+#namingParent .name-example .bodywood {
+  color: rgba(241, 245, 196, 0.78);
+}
+
+#namingParent .name-example .bodywood:after {
+  content: "Bodywood";
+  top: 0;
+}
+
+#namingParent .name-example .extras {
+  color: rgba(229, 182, 230, 0.71);
+}
+
+#namingParent .name-example .extras:after {
+  content: "Features";
+}
+
+#namingParent .table-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#namingParent .table-parent .group-parent {
+  text-align: left;
+}
+
+#namingParent .table-parent .table-group {
+  width: 100%;
+  display: flex;
+  font-family: NotoBold;
+  align-items: baseline;
+}
+
+#namingParent .table-parent .table-group .code-name {
+  width: 30px;
+  font-size: 14px;
+  text-align: right;
+  padding: 5px 0;
+  padding-right: 5px;
+  border-right: 1px solid #aaa;
+}
+
+#namingParent .table-parent .table-group .full-name {
+  font-family: SourceSans;
+  padding-left: 4px;
+  font-size: 14px;
 }
