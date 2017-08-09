@@ -59,6 +59,10 @@ a {
   left: -2px;
 }
 
+.mobile-handle {
+  display: none;
+}
+
 #navbar {
   position: fixed;
   width: 100%;

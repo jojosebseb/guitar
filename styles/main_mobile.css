@@ -96,21 +96,32 @@ a {
   border-bottom: 1px solid #eee;
   background: white;
   padding: 0px 10px;
+  align-items: center;
   transition: all .3s ease;
 }
 
 #navbar .nav-ul {
   display: flex;
   font-size: 14px;
+  /* display: none; */
+  position: absolute;
+  background: white;
+  top: 51px;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  left: 0;
+  padding-bottom: 10px;
   display: none;
 }
 
 #navbar .nav-ul li {
   position: relative;
+  width: 100%;
 }
 
 #navbar .nav-ul li a {
-  padding: 10px 0px 10px 25px;
+  padding: 15px 0px 5px 15px;
   opacity: 0.7;
   transition: all .3s ease;
   letter-spacing: 1px;
@@ -118,14 +129,7 @@ a {
 
 #navbar .nav-ul li .sub-menu {
   display: none;
-  position: absolute;
-  font-size: 12px;
-  width: 200px;
-  background: white;
-  padding: 5px 0;
-  left: 10px;
-  border: 1px solid #eee;
-  border-top: 0;
+  padding: 0px 30px 10px;
 }
 
 #navbar .nav-ul li .sub-menu li {
@@ -133,7 +137,7 @@ a {
 }
 
 #navbar .nav-ul li .sub-menu li a {
-  padding: 10px 15px;
+  padding: 5px 15px;
 }
 
 #navbar .nav-ul li .sub-menu li:hover {
@@ -148,8 +152,21 @@ a {
   display: block;
 }
 
+#navbar .nav-ul.active {
+  display: block;
+}
+
 #navbar.scrolled .flex {
   border-bottom: 1px solid #eee;
+}
+
+.mobile-handle {
+  width: 28px;
+}
+
+.mobile-handle .mobile-lines {
+  border: 1px solid black;
+  margin: 5px 0px;
 }
 
 #parentContainer {
@@ -583,13 +600,14 @@ a {
   display: flex;
   font-family: NotoReg;
   align-items: flex-end;
+  flex-wrap: wrap;
   margin-bottom: 40px;
   justify-content: center;
   width: 100%;
 }
 
 #shapeParent .shape-group .shape-img {
-  width: 45%;
+  width: 70%;
 }
 
 #shapeParent .shape-group .shape-img img {
@@ -600,7 +618,7 @@ a {
 }
 
 #shapeParent .shape-group .shape-paragraph {
-  width: 55%;
+  width: 100%;
   padding-bottom: 10px;
 }
 
@@ -609,6 +627,7 @@ a {
   padding-bottom: 5px;
   font-size: 15px;
   display: inline-block;
+  margin-bottom: 5px;
   border-bottom: 1px solid #aaa;
 }
 
@@ -625,10 +644,10 @@ a {
 
 #shapeParent .shape-group .shape-specs .spec-group {
   display: flex;
-  width: 100%;
+  width: 50%;
   font-size: 13px;
   font-family: SourceSans;
-  margin-bottom: 1px;
+  margin-bottom: 3px;
   align-items: baseline;
 }
 
