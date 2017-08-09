@@ -33,3 +33,7 @@ function badge(){
 }
 
 badge();
+
+$('.mobile-handle').on('click', function(){
+    $('.nav-ul').toggleClass('active');
+})

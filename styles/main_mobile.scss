@@ -99,7 +99,7 @@ $container-width: 100%;
         font-size: 14px;
         /* display: none; */
         position: absolute;
-        background: white;
+        background: #151515;
         top: 51px;
         flex-wrap: wrap;
         width: 100%;
@@ -110,9 +110,10 @@ $container-width: 100%;
         li{
             position: relative;
             width: 100%;
+            color: white;
             a{
                 padding: 15px 0px 5px 15px;
-                opacity: 0.7;
+                opacity: 0.8;
                 transition: all .3s ease;
                 letter-spacing: 1px;
             }
@@ -381,11 +382,11 @@ $container-width: 100%;
         display: flex;
         flex-wrap: wrap;
         margin-top: 0px;
+        justify-content: space-between;
         padding-top: 20px;
     }
     .product-module{
-        width: 48%;
-        margin-right: 2%;
+        width: 45%;
         margin-bottom: 30px;
         border-radius: 10px;
         position: relative;
@@ -425,7 +426,7 @@ $container-width: 100%;
         .view-btn{
             // border-radius: 5px;
             border: 1px solid black;
-            font-size: 12px;
+            font-size: 14px;
             padding: 5px 0;
             width: 100%;
             text-align: center;
@@ -441,7 +442,7 @@ $container-width: 100%;
             color: black;
         }
         .price{
-            font-size: 13px;
+            font-size: 15px;
             width: 50%;
             text-align: right;
             // font-family: NotoBold;
@@ -459,13 +460,13 @@ $container-width: 100%;
             transition: all .3s ease;
             max-width: 100%;
             display: block;
-            border-radius: 10px;
+            // border-radius: 10px;
         }
         .float-detail{
             // position: absolute;
             text-align: left;
             border-top: 1px solid #eee;
-            width: 85%;
+            width: 100%;
             margin: auto;
             display: flex;
             flex-wrap: wrap;
@@ -551,9 +552,10 @@ $container-width: 100%;
 .disclaimer{
     width: $container-width;
     margin: auto;
-    font-size: 11px;
+    font-size: 12px;
     font-family: NotoReg;
     padding-top: 10px;
+    padding-left: 10px;
     text-align: left;
     // width: 100%;
     a{
@@ -599,7 +601,7 @@ $container-width: 100%;
                 padding-bottom: 5px;
                 font-size: 15px;
                 display: inline-block;
-                margin-bottom: 5px;               
+                margin-bottom: 5px;
                 border-bottom: 1px solid #aaa;
             }
             .shape-text{
