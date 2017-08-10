@@ -75,7 +75,8 @@ a {
 }
 
 #navbar .logo-container img {
-  width: 25px;
+  width: 30px;
+  padding: 5px;
   display: inline-block;
   position: relative;
   top: 10px;
@@ -659,6 +660,7 @@ a {
   font-size: 110px;
   font-family: NotoBold;
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 
 #namingParent .name-example span {
@@ -707,11 +709,16 @@ a {
   top: 0;
 }
 
+#namingParent .name-example .series:after {
+  content: "Series";
+}
+
 #namingParent .name-example .extras {
   color: rgba(229, 182, 230, 0.71);
 }
 
 #namingParent .name-example .extras:after {
+  top: 15px;
   content: "Features";
 }
 

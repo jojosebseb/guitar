@@ -76,7 +76,8 @@ a {
 }
 
 #navbar .logo-container img {
-  width: 25px;
+  width: 30px;
+  padding: 5px;
   display: inline-block;
   position: relative;
 }
@@ -105,11 +106,10 @@ a {
   font-size: 14px;
   /* display: none; */
   position: absolute;
-  background: #151515;
+  background: rgba(20, 20, 20, 0.95);
   top: 51px;
   flex-wrap: wrap;
   width: 100%;
-  border-bottom: 1px solid #eee;
   left: 0;
   padding-bottom: 10px;
   display: none;
@@ -128,9 +128,13 @@ a {
   letter-spacing: 1px;
 }
 
+#navbar .nav-ul li img {
+  filter: invert(100);
+}
+
 #navbar .nav-ul li .sub-menu {
   display: none;
-  padding: 0px 30px 10px;
+  padding: 5px 30px 0px;
 }
 
 #navbar .nav-ul li .sub-menu li {
@@ -138,7 +142,7 @@ a {
 }
 
 #navbar .nav-ul li .sub-menu li a {
-  padding: 5px 15px;
+  padding: 7px 15px;
 }
 
 #navbar .nav-ul li .sub-menu li:hover {
@@ -542,12 +546,15 @@ a {
 
 #tonewoodParent .tonewood-table .table-module {
   display: flex;
-  width: 50%;
-  margin-bottom: 40px;
+  width: 100%;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 #tonewoodParent .tonewood-table .table-module .desc {
-  padding: 2px 15px;
+  padding: 2px 0px;
+  width: 60%;
+  padding-left: 10px;
 }
 
 #tonewoodParent .tonewood-table .table-module .desc .name {
@@ -562,12 +569,17 @@ a {
   font-size: 12px;
   padding-top: 2px;
   opacity: 0.86;
-  line-height: 20px;
-  padding-right: 30px;
+  line-height: 17px;
+}
+
+#tonewoodParent .tonewood-table .picture {
+  width: 40%;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 #tonewoodParent .tonewood-table img {
-  width: 130px;
+  width: 100%;
   display: block;
   border-radius: 5px;
 }
@@ -672,27 +684,28 @@ a {
 #namingParent .black-bg {
   color: white;
   background: #191919;
-  padding: 50px;
+  padding: 50px 0;
   margin-bottom: 20px;
 }
 
 #namingParent .name-example {
-  font-size: 80px;
+  font-size: 60px;
   font-family: NotoBold;
   margin-top: 30px;
+  width: 100%;
 }
 
 #namingParent .name-example span {
   position: relative;
-  padding: 0px 0;
-  margin: -10px;
+  padding: 10px 0;
+  margin: 0 -5px;
   line-height: 30px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 #namingParent .name-example span:after {
   font-family: SourceSans;
-  font-size: 11px;
+  font-size: 10px;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -728,11 +741,16 @@ a {
   top: 0;
 }
 
+#namingParent .name-example .series:after {
+  content: "Series";
+}
+
 #namingParent .name-example .extras {
   color: rgba(229, 182, 230, 0.71);
 }
 
 #namingParent .name-example .extras:after {
+  top: 0;
   content: "Features";
 }
 
