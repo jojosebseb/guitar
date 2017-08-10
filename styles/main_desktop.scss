@@ -100,8 +100,9 @@ $container-width: 1100px;
         font-size: 14px;
         li{
             position: relative;
+            margin-left: 20px;
             a{
-                padding: 10px 0px 10px 25px;
+                padding: 10px 0px 10px 0px;
                 opacity: 0.7;
                 transition: all .3s ease;
                 letter-spacing: 1px;
@@ -118,15 +119,35 @@ $container-width: 1100px;
                 border-top: 0;
                 li{
                     opacity: 0.8;
+                    padding: 0 15px;
                     a{
-                        padding: 10px 15px;
+                        padding: 10px 0px;
                     }
                 }
+                // li:after{
+                //     display: none;
+                // }
                 li:hover{
                     opacity: 1;
                 }
             }
         }
+        li.sub-parent:after{
+            display: none;
+        }
+        // li:after{
+        //     content: "";
+        //     width: 0;
+        //     background: black;
+        //     left: 0px;
+        //     height: 1px;
+        //     position: absolute;
+        //     bottom: -1px;
+        //     transition: all .5s ease;
+        // }
+        // li:hover:after{
+        //     width: 35px;
+        // }
         li:hover{
             a{
                 opacity: 1;
@@ -153,7 +174,7 @@ $container-width: 1100px;
     position: relative;
     z-index: 5;
     margin-bottom: 34px;
-    padding-top: 66px;
+    padding-top: 56px;
 }
 //parentContainer
 
@@ -227,6 +248,7 @@ $container-width: 1100px;
         .form-header{
             width: 100%;
             padding: 10px;
+            padding-bottom: 5px;
             margin-bottom: 10px;
             font-family: MeriReg;
             flex-wrap: wrap;
@@ -310,7 +332,10 @@ $container-width: 1100px;
             transition: all .3s ease;
             margin-right: 8px;
             // margin-top: 10px;
-            opacity: 0.7;
+            opacity: 0.45;
+        }
+        .thumbnail-module.active{
+            opacity: 1;
         }
     }
     .product-thumbnail:hover{
@@ -622,7 +647,7 @@ $container-width: 1100px;
         margin-bottom: 20px;
     }
     .name-example{
-        font-size: 110px;
+        font-size: 90px;
         font-family: NotoBold;
         margin-top: 30px;
         padding-bottom: 30px;
@@ -630,7 +655,7 @@ $container-width: 1100px;
             position: relative;
             padding: 0px 0;
             padding-bottom: 10px;
-            margin: -12px;
+            margin: -10px;
             line-height: 45px;
         }
         span:after{
@@ -707,3 +732,85 @@ $container-width: 1100px;
     }
 }
 //featureParent
+#customParent{
+    .container{
+        position: relative;
+        display: flex;
+    }
+    #customOptions{
+        width: 100%;
+        // min-height: 500px;
+    }
+    #customSummary{
+        width: 330px;
+        border-left: 1px solid #eee;
+        font-family: NotoBold;
+        padding: 50px 10px;        
+        .title{
+
+            font-family: MeriBold;
+            opacity: 0.8;
+        }
+        .legend{
+            padding-top: 10px;
+            font-size: 12px;
+            padding-bottom: 10px;
+            font-family: SourceSans;
+        }
+        .form-group{
+            display: flex;
+            font-size: 14px;
+            padding-bottom: 7px;
+            padding-left: 10px;
+            position: relative;
+            align-items: baseline;
+            .form-title{
+                font-family: NotoBold;
+                // opacity: 0.6;
+            }
+            .form-text{
+                font-family: SourceSans;
+                font-size: 15px;
+                padding-left: 5px;
+            }
+            .price{
+                color: green;
+                opacity: 0.6;
+                font-family: NotoBold;
+                // position: absolute;
+                // right: 20px;
+                padding-left: 10px;
+                font-size: 12px;
+            }
+        }
+        .total{
+            display: flex;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #aaa;
+            align-items: baseline;
+            justify-content: space-between;
+            .form-unit{
+                font-size: 11px;
+                opacity: 0.7;
+            }
+            .total-price{
+                font-family: NotoBold;
+                font-size: 18px;
+                .unit{
+                    font-family: NotoReg;
+                    font-size: 10px;
+                    padding-right: 5px;
+                }
+            }
+        }
+        .form-group:after{
+            content: " \25CF";
+            font-size: 10px;
+            line-height: 20px;
+            position: absolute;
+            opacity: 0.5;
+            left: 0
+        }
+    }
+}

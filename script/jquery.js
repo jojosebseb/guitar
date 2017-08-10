@@ -13,6 +13,8 @@ $(window).scroll(function(){
 var src;
 $('.product-thumbnail > .thumbnail-module').on('click', function(){
     src = $(this).find('img').attr('src');
+    $('.thumbnail-module').removeClass('active');
+    $(this).addClass('active');
     $('#productShow').attr('src', src);
     $('#productShow').addClass('hide');
     $('.product-big').css({
@@ -29,11 +31,11 @@ function badge(){
             })
         })
     })
-
 }
 
 badge();
 
 $('.mobile-handle').on('click', function(){
+    $(this).toggleClass('active');
     $('.nav-ul').toggleClass('active');
 })

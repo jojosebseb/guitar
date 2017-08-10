@@ -164,10 +164,29 @@ $container-width: 100%;
     }
 }
 .mobile-handle{
-    width: 28px;
+    width: 27px;
+    transition: all .4s ease;
     .mobile-lines{
         border: 1px solid black;
         margin: 5px 0px;
+        position: relative;
+        transition: all .5s ease;
+        top: 0;
+    }
+}
+.mobile-handle.active{
+    transform: rotateZ(-180deg);
+    #line1{
+        transform: rotateZ(45deg);
+        top: 7px;
+    }
+    #line2{
+        opacity: 0;
+        transform: rotateZ(5deg);
+    }
+    #line3{
+        transform: rotateZ(-45deg);
+        top: -7px;
     }
 }
 //Navbar

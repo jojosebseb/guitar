@@ -107,10 +107,11 @@ a {
 
 #navbar .nav-ul li {
   position: relative;
+  margin-left: 20px;
 }
 
 #navbar .nav-ul li a {
-  padding: 10px 0px 10px 25px;
+  padding: 10px 0px 10px 0px;
   opacity: 0.7;
   transition: all .3s ease;
   letter-spacing: 1px;
@@ -130,14 +131,19 @@ a {
 
 #navbar .nav-ul li .sub-menu li {
   opacity: 0.8;
+  padding: 0 15px;
 }
 
 #navbar .nav-ul li .sub-menu li a {
-  padding: 10px 15px;
+  padding: 10px 0px;
 }
 
 #navbar .nav-ul li .sub-menu li:hover {
   opacity: 1;
+}
+
+#navbar .nav-ul li.sub-parent:after {
+  display: none;
 }
 
 #navbar .nav-ul li:hover a {
@@ -159,7 +165,7 @@ a {
   position: relative;
   z-index: 5;
   margin-bottom: 34px;
-  padding-top: 66px;
+  padding-top: 56px;
 }
 
 #footer {
@@ -239,6 +245,7 @@ a {
 #productDetail .wRight .form-header {
   width: 100%;
   padding: 10px;
+  padding-bottom: 5px;
   margin-bottom: 10px;
   font-family: MeriReg;
   flex-wrap: wrap;
@@ -323,7 +330,11 @@ a {
   cursor: pointer;
   transition: all .3s ease;
   margin-right: 8px;
-  opacity: 0.7;
+  opacity: 0.45;
+}
+
+#productDetail .product-thumbnail .thumbnail-module.active {
+  opacity: 1;
 }
 
 #productDetail .product-thumbnail:hover .thumbnail-module {
@@ -657,7 +668,7 @@ a {
 }
 
 #namingParent .name-example {
-  font-size: 110px;
+  font-size: 90px;
   font-family: NotoBold;
   margin-top: 30px;
   padding-bottom: 30px;
@@ -667,7 +678,7 @@ a {
   position: relative;
   padding: 0px 0;
   padding-bottom: 10px;
-  margin: -12px;
+  margin: -10px;
   line-height: 45px;
 }
 
@@ -752,4 +763,93 @@ a {
   font-family: SourceSans;
   padding-left: 4px;
   font-size: 16px;
+}
+
+#customParent .container {
+  position: relative;
+  display: flex;
+}
+
+#customParent #customOptions {
+  width: 100%;
+}
+
+#customParent #customSummary {
+  width: 330px;
+  border-left: 1px solid #eee;
+  font-family: NotoBold;
+  padding: 50px 10px;
+}
+
+#customParent #customSummary .title {
+  font-family: MeriBold;
+  opacity: 0.8;
+}
+
+#customParent #customSummary .legend {
+  padding-top: 10px;
+  font-size: 12px;
+  padding-bottom: 10px;
+  font-family: SourceSans;
+}
+
+#customParent #customSummary .form-group {
+  display: flex;
+  font-size: 14px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  position: relative;
+  align-items: baseline;
+}
+
+#customParent #customSummary .form-group .form-title {
+  font-family: NotoBold;
+}
+
+#customParent #customSummary .form-group .form-text {
+  font-family: SourceSans;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+#customParent #customSummary .form-group .price {
+  color: green;
+  opacity: 0.6;
+  font-family: NotoBold;
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+#customParent #customSummary .total {
+  display: flex;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #aaa;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+#customParent #customSummary .total .form-unit {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+#customParent #customSummary .total .total-price {
+  font-family: NotoBold;
+  font-size: 18px;
+}
+
+#customParent #customSummary .total .total-price .unit {
+  font-family: NotoReg;
+  font-size: 10px;
+  padding-right: 5px;
+}
+
+#customParent #customSummary .form-group:after {
+  content: " \25CF";
+  font-size: 10px;
+  line-height: 20px;
+  position: absolute;
+  opacity: 0.5;
+  left: 0;
 }
