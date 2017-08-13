@@ -39,3 +39,12 @@ $('.mobile-handle').on('click', function(){
     $(this).toggleClass('active');
     $('.nav-ul').toggleClass('active');
 })
+
+
+$('.feature-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    infinite: false,
+    arrows: false,
+    dots: true
+})
