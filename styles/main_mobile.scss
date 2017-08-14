@@ -198,7 +198,7 @@ $container-width: 100%;
     position: relative;
     z-index: 5;
     margin-bottom: 34px;
-    padding-top: 66px;
+    padding-top: 53px;
     padding-bottom: 30px;
 }
 //parentContainer
@@ -598,7 +598,24 @@ $container-width: 100%;
 
 
 //featureParent
+#introBanner{
+    padding: 140px 0;
+    color: white;
+    height: 20vh;
+    background-image: url('../img/global/banner-4.jpg');
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    .slider-text{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 #shapeParent{
+    padding-top: 30px;
     padding-bottom: 70px;
     .container{
         display: flex;
