@@ -579,8 +579,26 @@ a {
   text-decoration: underline;
 }
 
+#introBanner {
+  padding: 140px 0;
+  color: white;
+  height: 70vh;
+  background-image: url("../img/global/banner-4.jpg");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+#introBanner .slider-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #shapeParent {
   padding-bottom: 70px;
+  padding-top: 40px;
 }
 
 #shapeParent .container {
