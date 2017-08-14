@@ -43,7 +43,7 @@ $('.mobile-handle').on('click', function(){
 
 $('.feature-slider').slick({
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     infinite: false,
     arrows: false,
     dots: true,

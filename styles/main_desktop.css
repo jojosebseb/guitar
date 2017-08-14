@@ -775,7 +775,7 @@ a {
 #featureBelt .slick-dots {
   display: flex;
   padding-top: 30px;
-  width: 170px;
+  width: 120px;
   margin: auto;
   justify-content: space-around;
 }
@@ -821,21 +821,44 @@ a {
   width: 300px;
   padding: 0 30px;
   outline: none;
+  position: relative;
+  text-align: center;
 }
 
-#featureBelt .feature-slider .feature-title {
+#featureBelt .feature-slider .feature-module img {
+  opacity: 0;
+  transition: all .8s ease 0.2s;
+}
+
+#featureBelt .feature-slider .feature-module .feature-title {
   font-family: MeriBold;
   padding-top: 10px;
   font-size: 14px;
-  text-align: center;
   letter-spacing: 1px;
+  position: relative;
+  opacity: 0;
+  top: 10px;
+  transition: all .5s ease 0.3s;
 }
 
-#featureBelt .feature-slider .feature-paragraph {
+#featureBelt .feature-slider .feature-module .feature-paragraph {
   font-size: 12px;
   line-height: 20px;
   padding-top: 5px;
   opacity: 0.87;
+  position: relative;
+  opacity: 0;
+  top: 10px;
+  transition: all .5s ease 0.5s;
+}
+
+#featureBelt .feature-slider .feature-module.slick-active .feature-title, #featureBelt .feature-slider .feature-module.slick-active .feature-paragraph {
+  opacity: 1;
+  top: 0;
+}
+
+#featureBelt .feature-slider .feature-module.slick-active img {
+  opacity: 1;
 }
 
 #customParent .container {
