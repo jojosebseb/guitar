@@ -627,7 +627,7 @@ a {
   color: white;
   height: 20vh;
   background-image: url("../img/global/banner-4.jpg");
-  background-position: center center;
+  background-position: center right;
   background-size: cover;
   position: relative;
 }
