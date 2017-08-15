@@ -9,6 +9,7 @@ $(window).scroll(function(){
     else {
         $('#navbar').removeClass('scrolled');
     }
+    scrollTop = $(window).scrollTop();
 })
 var src;
 $('.product-thumbnail > .thumbnail-module').on('click', function(){
@@ -71,8 +72,30 @@ $('.feature-slider').slick({
       slidesToScroll: 1
     }
   }
-  // You can unslick at a given breakpoint now by adding:
-  // settings: "unslick"
-  // instead of a settings object
+]
+})
+
+
+$('.product-thumbnail').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: true,
+    prevArrow: '<div class="arrow-container prev"></div>',
+    nextArrow: '<div class="arrow-container next"></div>',
+    dots: false,
+    responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: '<div class="arrow-container prev"></div>',
+      nextArrow: '<div class="arrow-container next"></div>',
+      dots: false,
+    }
+  },
 ]
 })

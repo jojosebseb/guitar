@@ -124,7 +124,7 @@ a {
   width: 200px;
   background: white;
   padding: 5px 0;
-  left: 10px;
+  left: 0px;
   border: 1px solid #eee;
   border-top: 0;
 }
@@ -202,6 +202,37 @@ a {
   width: 60%;
 }
 
+.arrow-container {
+  width: 13px;
+  height: 13px;
+  border: 3px solid #191919;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotateZ(-45deg);
+  cursor: pointer;
+  border: 3px solid #191919;
+  transition: all .3s ease;
+}
+
+.arrow-container.prev {
+  left: -25px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.arrow-container.next {
+  right: -25px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.arrow-container.slick-disabled {
+  opacity: 0.5;
+  border: 3px solid #191919;
+  border-radius: 50%;
+  transform: translateY(-50%) rotateZ(-145deg);
+}
+
 #productDetail .flex {
   flex-wrap: wrap;
 }
@@ -234,6 +265,7 @@ a {
   padding-bottom: 30px;
   padding-left: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -320,25 +352,21 @@ a {
 }
 
 #productDetail .product-thumbnail {
-  width: 50px;
-  position: absolute;
-  left: -55px;
+  width: 70%;
+  margin: auto;
+  margin-top: 10px;
 }
 
 #productDetail .product-thumbnail .thumbnail-module {
-  width: 100%;
+  width: 50px;
   cursor: pointer;
   transition: all .3s ease;
-  margin-right: 8px;
+  margin: 0 4px;
   opacity: 0.45;
 }
 
 #productDetail .product-thumbnail .thumbnail-module.active {
   opacity: 1;
-}
-
-#productDetail .product-thumbnail:hover .thumbnail-module {
-  opacity: 0.45;
 }
 
 #productDetail .product-thumbnail:hover .thumbnail-module:hover {
@@ -360,6 +388,19 @@ a {
 
 #productDetail .product-information .product-highlights {
   width: 100%;
+}
+
+.inquire-button {
+  font-family: NotoReg;
+  font-size: 14px;
+  background: #191919;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 #productList {
@@ -402,6 +443,11 @@ a {
   overflow: hidden;
 }
 
+#productList .product-module .fader {
+  opacity: 0;
+  transition: all .3s ease;
+}
+
 #productList .product-module .badge {
   font-size: 10px;
   padding: 5px 0px;
@@ -434,41 +480,59 @@ a {
 
 #productList .product-module .view-btn {
   border: 1px solid black;
-  font-size: 12px;
-  padding: 5px 0;
-  width: 100%;
+  font-size: 14px;
+  padding: 10px 0;
+  width: 50%;
   text-align: center;
   margin: auto;
-  margin-top: 5px;
-  transition: all .3s ease;
+  transition: all .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background: white;
   font-family: SourceSans;
 }
 
+#productList .product-module .view-btn span.forarrow {
+  transform: scaleX(0.5);
+  display: block;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+
 #productList .product-module .view-btn:hover {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
+  border-radius: 5px;
 }
 
 #productList .product-module .price {
-  font-size: 13px;
+  font-size: 15px;
   width: 50%;
   text-align: right;
+  font-family: NotoBold;
+  color: #555;
 }
 
 #productList .product-module .price .unit {
   font-size: 10px;
-  margin-right: 5px;
+  margin-right: 3px;
 }
 
 #productList .product-module .detail {
-  font-size: 13px;
+  font-size: 16px;
   font-family: NotoBold;
   opacity: 1;
+  letter-spacing: 1px;
 }
 
 #productList .product-module img {
   transition: all .3s ease;
-  max-width: 100%;
+  max-width: 70%;
+  margin: auto;
   display: block;
   border-radius: 10px;
 }
@@ -485,8 +549,12 @@ a {
   padding: 5px 5px;
 }
 
-#productList .product-module:hover img {
-  opacity: 0.6;
+#productList .product-module:hover .view-btn {
+  opacity: 1;
+}
+
+#productList .product-module:hover .fader {
+  opacity: 1;
 }
 
 #productList .product-module:hover .badge {
@@ -579,21 +647,51 @@ a {
   text-decoration: underline;
 }
 
-#introBanner {
-  padding: 140px 0;
+.fader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-section {
   color: white;
-  height: 70vh;
-  background-image: url("../img/global/banner-4.jpg");
+  height: 25vw;
   background-position: center center;
   background-size: cover;
   position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-#introBanner .slider-text {
+.banner-section .slider-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 40%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.banner-section .banner-title {
+  font-family: NotoBold;
+  font-size: 30px;
+}
+
+.banner-section .banner-caption {
+  font-family: NotoReg;
+  padding-top: 10px;
+}
+
+#introBanner {
+  background-image: url("../img/global/banner-6.jpg");
+}
+
+#detailBanner {
+  background-image: url("../img/global/banner-66.jpg");
 }
 
 #shapeParent {
@@ -613,7 +711,7 @@ a {
   align-items: flex-start;
   margin-bottom: 40px;
   justify-content: center;
-  width: 47%;
+  width: 48%;
 }
 
 #shapeParent .shape-group .shape-img {
@@ -624,12 +722,12 @@ a {
   display: block;
   margin: auto;
   width: 100%;
-  filter: grayscale(40%);
 }
 
 #shapeParent .shape-group .shape-paragraph {
   width: 60%;
   padding-top: 20px;
+  padding-left: 10px;
 }
 
 #shapeParent .shape-group .shape-paragraph .shape-title {
@@ -670,6 +768,24 @@ a {
 #bracingParent .container {
   display: flex;
   justify-content: space-between;
+}
+
+.browse-button {
+  padding: 10px 20px;
+  padding-right: 25px;
+  position: relative;
+  margin-top: 20px;
+  display: inline-block;
+  font-size: 14px;
+  font-family: SourceSans;
+  background: #420f0f;
+  color: #eee;
+  transition: all .3s ease;
+  border-radius: 5px;
+}
+
+.browse-button:hover {
+  color: white;
 }
 
 #namingParent {
@@ -793,7 +909,7 @@ a {
 #featureBelt .slick-dots {
   display: flex;
   padding-top: 30px;
-  width: 120px;
+  width: 150px;
   margin: auto;
   justify-content: space-around;
 }
@@ -845,7 +961,7 @@ a {
 
 #featureBelt .feature-slider .feature-module img {
   opacity: 0;
-  transition: all .8s ease 0.2s;
+  transition: all .5s ease;
 }
 
 #featureBelt .feature-slider .feature-module .feature-title {
@@ -868,6 +984,10 @@ a {
   opacity: 0;
   top: 10px;
   transition: all .5s ease 0.5s;
+}
+
+#featureBelt .feature-slider .feature-module:hover img {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 #featureBelt .feature-slider .feature-module.slick-active .feature-title, #featureBelt .feature-slider .feature-module.slick-active .feature-paragraph {

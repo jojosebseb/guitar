@@ -114,7 +114,7 @@ $container-width: 1100px;
                 width: 200px;
                 background: white;
                 padding: 5px 0;
-                left: 10px;
+                left: 0px;
                 border: 1px solid #eee;
                 border-top: 0;
                 li{
@@ -209,6 +209,35 @@ $container-width: 1100px;
 .w60{
     width: 60%;
 }
+.arrow-container{
+    width: 13px;
+    height: 13px;
+    border: 3px solid #191919;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotateZ(-45deg);
+    cursor: pointer;
+    border: 3px solid #191919;
+    transition: all .3s ease;
+}
+
+.arrow-container.prev{
+    left: -25px;
+    border-right: 0;
+    border-bottom: 0;
+}
+.arrow-container.next{
+    right: -25px;
+    border-left: 0;
+    border-top: 0;
+}
+.arrow-container.slick-disabled{
+    opacity: 0.5;
+    border: 3px solid #191919;
+
+    border-radius: 50%;
+    transform: translateY(-50%) rotateZ(-145deg);
+}
 //productDetail
 #productDetail{
     .flex{
@@ -240,6 +269,7 @@ $container-width: 1100px;
         padding-bottom: 30px;
         padding-left: 0;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     .wRight{
@@ -320,18 +350,14 @@ $container-width: 1100px;
         }
     }
     .product-thumbnail{
-        width: 50px;
-        position: absolute;
-        left: -55px;
-        // margin: auto;
-        // display: flex;
-        // flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+        margin-top: 10px;
         .thumbnail-module{
-            width: 100%;
+            width: 50px;
             cursor: pointer;
             transition: all .3s ease;
-            margin-right: 8px;
-            // margin-top: 10px;
+            margin: 0 4px;
             opacity: 0.45;
         }
         .thumbnail-module.active{
@@ -339,9 +365,6 @@ $container-width: 1100px;
         }
     }
     .product-thumbnail:hover{
-        .thumbnail-module{
-            opacity: 0.45;
-        }
         .thumbnail-module:hover{
             opacity: 1;
         }
@@ -364,7 +387,18 @@ $container-width: 1100px;
     }
 }
 //productDetail
-
+.inquire-button{
+    font-family: NotoReg;
+    font-size: 14px;
+    background: #191919;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
 //productList
 #productList{
     padding-top: 30px;
@@ -398,6 +432,10 @@ $container-width: 1100px;
             top: 10%;
             overflow: hidden;
         }
+        .fader{
+            opacity: 0;
+            transition: all .3s ease;
+        }
         .badge{
             font-size: 10px;
             padding: 5px 0px;
@@ -427,39 +465,56 @@ $container-width: 1100px;
         .view-btn{
             // border-radius: 5px;
             border: 1px solid black;
-            font-size: 12px;
-            padding: 5px 0;
-            width: 100%;
+            font-size: 14px;
+            padding: 10px 0;
+            width: 50%;
             text-align: center;
             margin: auto;
-            margin-top: 5px;
-            transition: all .3s ease;
+            transition: all .5s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
             // background: black;
             // color: white;
+            background: white;
             font-family: SourceSans;
+            span.forarrow {
+                transform: scaleX(0.5);
+                display: block;
+                display: inline-block;
+                position: relative;
+                top: 1px;
+            }
         }
         .view-btn:hover{
-            background: white;
-            color: black;
+            background: black;
+            color: white;
+            // border: 1px solid black;
+            border-radius: 5px;
         }
         .price{
-            font-size: 13px;
+            font-size: 15px;
             width: 50%;
             text-align: right;
-            // font-family: NotoBold;
+            font-family: NotoBold;
+            color: #555;
             .unit{
                 font-size: 10px;
-                margin-right: 5px;
+                margin-right: 3px;
             }
         }
         .detail{
-            font-size: 13px;
+            font-size: 16px;
             font-family: NotoBold;
             opacity: 1;
+            letter-spacing: 1px;
         }
         img{
             transition: all .3s ease;
-            max-width: 100%;
+            max-width: 70%;
+            margin: auto;
             display: block;
             border-radius: 10px;
         }
@@ -477,8 +532,11 @@ $container-width: 1100px;
         }
     }
     .product-module:hover{
-        img{
-            opacity: 0.6;
+        .view-btn{
+            opacity: 1;
+        }
+        .fader{
+            opacity: 1;
         }
         .badge{
             right: 0;
@@ -565,28 +623,55 @@ $container-width: 1100px;
 }
 
 //featureParent
-#introBanner{
-    padding: 140px 0;
+.fader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5)
+}
+.banner-section{
     color: white;
-    height: 70vh;
-    background-image: url('../img/global/banner-4.jpg');
+    height: 25vw;
     background-position: center center;
     background-size: cover;
     position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     .slider-text{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 40%;
+        text-align: center;
+        letter-spacing: 1px;
     }
+    .banner-title{
+        font-family: NotoBold;
+        font-size: 30px;
+    }
+    .banner-caption{
+        font-family: NotoReg;
+        padding-top: 10px;
+    }
+}
+#introBanner{
+    background-image: url('../img/global/banner-6.jpg');
+}
+#detailBanner{
+    background-image: url('../img/global/banner-66.jpg');
 }
 #shapeParent{
     padding-bottom: 70px;
     padding-top: 40px;
+
     .container{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        // background: white;
     }
     .shape-group{
         display: flex;
@@ -597,19 +682,19 @@ $container-width: 1100px;
         margin-bottom: 40px;
         justify-content: center;
         // border-bottom: 1px solid #eee;
-        width: 47%;
+        width: 48%;
         .shape-img{
             width: 40%;
             img{
                 display: block;
                 margin: auto;
                 width: 100%;
-                filter: grayscale(40%);
             }
         }
         .shape-paragraph{
             width: 60%;
             padding-top: 20px;
+            padding-left: 10px;
             .shape-title{
                 font-family: NotoBold;
                 padding-bottom: 5px;
@@ -651,7 +736,25 @@ $container-width: 1100px;
         justify-content: space-between;
     }
 }
+.browse-button{
+    padding: 10px 20px;
+    padding-right: 25px;
+    position: relative;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 14px;
+    font-family: SourceSans;
+    background: #420f0f;
+    color: #eee;
+    transition: all .3s ease;
+    border-radius: 5px;
+}
+.browse-button:after{
 
+}
+.browse-button:hover{
+    color: white;
+}
 #namingParent{
     margin: 50px 0;
     padding-bottom: 40px;
@@ -729,8 +832,6 @@ $container-width: 1100px;
             display: flex;
             font-family: NotoBold;
             align-items: baseline;
-            // border: 1px solid #aaa;
-            // margin: 2px 1px;
             .code-name{
                 width: 45px;
                 font-size: 14px;
@@ -755,7 +856,7 @@ $container-width: 1100px;
     .slick-dots{
         display: flex;
         padding-top: 30px;
-        width: 120px;
+        width: 150px;
         margin: auto;
         justify-content: space-around;
         li{
@@ -799,7 +900,7 @@ $container-width: 1100px;
             text-align: center;
             img{
                 opacity: 0;
-                transition: all .8s ease 0.2s;
+                transition: all .5s ease;
             }
             .feature-title{
                 font-family: MeriBold;
@@ -820,6 +921,11 @@ $container-width: 1100px;
                 opacity: 0;
                 top: 10px;
                 transition: all .5s ease 0.5s;
+            }
+        }
+        .feature-module:hover{
+            img{
+                transform: translate(-50%, -50%) scale(1.1);
             }
         }
         .feature-module.slick-active{
