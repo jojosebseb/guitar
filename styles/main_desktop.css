@@ -302,7 +302,6 @@ a {
 
 #productDetail .wRight .form-header .title {
   font-size: 24px;
-  letter-spacing: 2px;
   font-family: NotoBold;
 }
 
@@ -315,7 +314,7 @@ a {
 
 #productDetail .wRight .form-header .price {
   font-size: 25px;
-  font-family: NotoReg;
+  font-family: NotoBold;
   letter-spacing: 1px;
 }
 
@@ -452,7 +451,7 @@ span.forarrow {
 #productList .product-module .view-btn {
   font-size: 15px;
   padding: 5px 0;
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100%;
   text-align: center;
   transition: all .5s ease;
@@ -474,7 +473,8 @@ span.forarrow {
 #productList .product-module .price {
   font-size: 15px;
   width: 50%;
-  text-align: right;
+  text-align: center;
+  width: 100%;
   font-family: NotoBold;
   color: #555;
 }
@@ -488,7 +488,8 @@ span.forarrow {
   font-size: 16px;
   font-family: NotoBold;
   opacity: 1;
-  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
 }
 
 #productList .product-module img {

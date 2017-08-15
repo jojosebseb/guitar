@@ -83,6 +83,7 @@ $('.product-thumbnail').slick({
       prevArrow: '<div class="arrow-container prev"></div>',
       nextArrow: '<div class="arrow-container next"></div>',
       dots: false,
+      fade: true
     }
   },
 ]
