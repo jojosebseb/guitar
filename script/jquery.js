@@ -23,18 +23,6 @@ $('.product-thumbnail > .thumbnail-module').on('click', function(){
     })
 })
 
-var curBadge;
-function badge(){
-    $('.badge-container').each(function(){
-        $(this).find('.badge').each(function(i){
-            $(this).css({
-                'transition-delay': i/10 +'s'
-            })
-        })
-    })
-}
-
-badge();
 
 $('.mobile-handle').on('click', function(){
     $(this).toggleClass('active');

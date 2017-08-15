@@ -403,6 +403,14 @@ a {
   margin-top: 20px;
 }
 
+span.forarrow {
+  transform: scaleX(0.5);
+  display: block;
+  display: inline-block;
+  position: relative;
+  font-family: NotoReg;
+}
+
 #productList {
   padding-top: 30px;
   font-family: NotoReg;
@@ -436,77 +444,31 @@ a {
   cursor: pointer;
 }
 
-#productList .product-module .badge-container {
-  position: absolute;
-  right: 0;
-  top: 10%;
-  overflow: hidden;
-}
-
 #productList .product-module .fader {
   opacity: 0;
   transition: all .3s ease;
 }
 
-#productList .product-module .badge {
-  font-size: 10px;
-  padding: 5px 0px;
-  width: 55px;
-  text-align: center;
-  margin-bottom: 5px;
-  transition: all .3s ease;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  position: relative;
-  right: -55px;
-  z-index: 5;
-}
-
-#productList .product-module .badge.new {
-  background: #d7d7d5;
-  color: black;
-}
-
-#productList .product-module .badge.limited {
-  background: #a4936d;
-  color: black;
-  font-size: 10px;
-}
-
-#productList .product-module .badge.sale {
-  background: #983e3e;
-  color: white;
-}
-
 #productList .product-module .view-btn {
-  border: 1px solid black;
-  font-size: 14px;
-  padding: 10px 0;
-  width: 50%;
+  font-size: 15px;
+  padding: 5px 0;
+  margin-top: 10px;
+  width: 100%;
   text-align: center;
-  margin: auto;
   transition: all .5s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  background: white;
+  background: #191919;
+  color: white;
+  display: block;
   font-family: SourceSans;
 }
 
-#productList .product-module .view-btn span.forarrow {
-  transform: scaleX(0.5);
-  display: block;
-  display: inline-block;
-  position: relative;
+#productList .product-module .forarrow {
   top: 1px;
 }
 
 #productList .product-module .view-btn:hover {
   background: black;
   color: white;
-  border-radius: 5px;
 }
 
 #productList .product-module .price {
@@ -553,8 +515,8 @@ a {
   opacity: 1;
 }
 
-#productList .product-module:hover .fader {
-  opacity: 1;
+#productList .product-module:hover img {
+  opacity: 0.6;
 }
 
 #productList .product-module:hover .badge {
@@ -909,14 +871,15 @@ a {
 #featureBelt .slick-dots {
   display: flex;
   padding-top: 30px;
-  width: 150px;
+  width: 350px;
   margin: auto;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #featureBelt .slick-dots li {
   width: 30px;
   height: 8px;
+  margin: 0 5px;
   background: rgba(255, 255, 255, 0.88);
   cursor: pointer;
   border: 1px solid #333;

@@ -294,11 +294,15 @@ $container-width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding-top: 100px;
     }
     .wRight{
         width: 100%;
         padding: 10px 0px;
         .form-header{
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -332,7 +336,7 @@ $container-width: 100%;
             }
             .price{
                 font-size: 25px;
-                font-family: NotoReg;
+                font-family: NotoBold;
                 letter-spacing: 1px;
                 .unit{
                     font-size: 14px;
@@ -399,6 +403,13 @@ $container-width: 100%;
         }
     }
 }
+span.forarrow {
+    transform: scaleX(0.5);
+    display: block;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+}
 //productDetail
 .inquire-button{
     font-family: NotoReg;
@@ -443,13 +454,6 @@ $container-width: 100%;
         .fader{
             display: none;
         }
-        .badge-container{
-            position: absolute;
-            right: 0;
-            top: 10%;
-            overflow: hidden;
-            display: none;
-        }
         .img-container{
             width: 50%;
             // border-right: 1px solid #aaa;
@@ -457,32 +461,6 @@ $container-width: 100%;
                 width: 100%;
                 margin: auto;
             }
-        }
-        .badge{
-            font-size: 10px;
-            padding: 5px 0px;
-            width: 55px;
-            text-align: center;
-            margin-bottom: 5px;
-            transition: all .3s ease;
-            border-top-left-radius: 3px;
-            border-bottom-left-radius: 3px;
-            position: relative;
-            right: -55px;
-            z-index: 5;
-        }
-        .badge.new{
-            background: rgb(215, 215, 213);
-            color: black;
-        }
-        .badge.limited{
-            background: rgb(164, 147, 109);
-            color: black;
-            font-size: 10px;
-        }
-        .badge.sale{
-            background: rgb(152, 62, 62);
-            color: white;
         }
         .view-btn{
             font-size: 14px;
@@ -497,13 +475,7 @@ $container-width: 100%;
             bottom: 40px;
             right: 30px;
             border-bottom: 1px solid #888;
-            span.forarrow {
-                transform: scaleX(0.5);
-                display: block;
-                display: inline-block;
-                position: relative;
-                top: 1px;
-            }
+
         }
         .view-btn:hover{
             background: white;
@@ -546,9 +518,6 @@ $container-width: 100%;
     .product-module:hover{
         img{
             opacity: 1;
-        }
-        .badge{
-            right: 0;
         }
     }
     .center{
@@ -750,7 +719,26 @@ $container-width: 100%;
         justify-content: space-between;
     }
 }
+.browse-button{
+    padding: 10px 20px;
+    padding-right: 25px;
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    font-family: SourceSans;
+    background: #420f0f;
+    color: #eee;
+    transition: all .3s ease;
+    border-radius: 5px;
+}
+.browse-button:after{
 
+}
+.browse-button:hover{
+    color: white;
+}
 #namingParent{
     margin: 50px 0;
     padding-bottom: 40px;
@@ -855,12 +843,13 @@ $container-width: 100%;
     .slick-dots{
         display: flex;
         padding-top: 30px;
-        width: 180px;
+        width: 100%;
         margin: auto;
-        justify-content: space-around;
+        justify-content: center;
         li{
             width: 25px;
             height: 8px;
+            margin: 0 4px;
             background: rgba(255, 255, 255, 0.88);
             cursor: pointer;
             border: 1px solid #333;

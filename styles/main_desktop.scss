@@ -399,6 +399,14 @@ $container-width: 1100px;
     cursor: pointer;
     margin-top: 20px;
 }
+span.forarrow {
+    transform: scaleX(0.5);
+    display: block;
+    display: inline-block;
+    position: relative;
+    // top: 1px;
+    font-family: NotoReg;
+}
 //productList
 #productList{
     padding-top: 30px;
@@ -426,73 +434,31 @@ $container-width: 1100px;
         border-radius: 10px;
         position: relative;
         cursor: pointer;
-        .badge-container{
-            position: absolute;
-            right: 0;
-            top: 10%;
-            overflow: hidden;
-        }
         .fader{
             opacity: 0;
             transition: all .3s ease;
         }
-        .badge{
-            font-size: 10px;
-            padding: 5px 0px;
-            width: 55px;
-            text-align: center;
-            margin-bottom: 5px;
-            transition: all .3s ease;
-            border-top-left-radius: 3px;
-            border-bottom-left-radius: 3px;
-            position: relative;
-            right: -55px;
-            z-index: 5;
-        }
-        .badge.new{
-            background: rgb(215, 215, 213);
-            color: black;
-        }
-        .badge.limited{
-            background: rgb(164, 147, 109);
-            color: black;
-            font-size: 10px;
-        }
-        .badge.sale{
-            background: rgb(152, 62, 62);
-            color: white;
-        }
         .view-btn{
             // border-radius: 5px;
-            border: 1px solid black;
-            font-size: 14px;
-            padding: 10px 0;
-            width: 50%;
+            font-size: 15px;
+            padding: 5px 0;
+            margin-top: 10px;
+            width: 100%;
             text-align: center;
-            margin: auto;
             transition: all .5s ease;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            // background: black;
-            // color: white;
-            background: white;
+            background: #191919;
+            color: white;
+            display: block;
             font-family: SourceSans;
-            span.forarrow {
-                transform: scaleX(0.5);
-                display: block;
-                display: inline-block;
-                position: relative;
-                top: 1px;
-            }
+        }
+        .forarrow{
+            top: 1px;
         }
         .view-btn:hover{
             background: black;
             color: white;
             // border: 1px solid black;
-            border-radius: 5px;
+            // border-radius: 5px;
         }
         .price{
             font-size: 15px;
@@ -535,8 +501,8 @@ $container-width: 1100px;
         .view-btn{
             opacity: 1;
         }
-        .fader{
-            opacity: 1;
+        img{
+            opacity: 0.6;
         }
         .badge{
             right: 0;
@@ -856,12 +822,13 @@ $container-width: 1100px;
     .slick-dots{
         display: flex;
         padding-top: 30px;
-        width: 150px;
+        width: 350px;
         margin: auto;
-        justify-content: space-around;
+        justify-content: center;
         li{
             width: 30px;
             height: 8px;
+            margin: 0 5px;
             background: rgba(255, 255, 255, 0.88);
             cursor: pointer;
             border: 1px solid #333;
