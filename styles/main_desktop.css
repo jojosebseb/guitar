@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  outline: none;
 }
 
 a {
@@ -156,6 +157,217 @@ a {
 
 #navbar.scrolled .flex {
   border-bottom: 1px solid #eee;
+}
+
+#newsSlider {
+  background: #eee;
+  position: relative;
+}
+
+#newsSlider #slider1 {
+  background-image: url("../img/global/banner-9.jpg");
+}
+
+#newsSlider #slider2 {
+  background-image: url("../img/global/banner-4.jpg");
+}
+
+#newsSlider #slider3 {
+  background-image: url("../img/global/banner-6.jpg");
+}
+
+#newsSlider .slider-module {
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+#newsSlider .text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: MeriReg;
+}
+
+#newsSlider .text-container .text-title {
+  font-size: 30px;
+  font-family: MeriBold;
+  transition: all .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 25px;
+}
+
+#newsSlider .text-container .text-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  transition: all .5s ease .2s;
+  opacity: 0;
+  position: relative;
+  top: 15px;
+}
+
+#newsSlider .text-container .general-button {
+  padding: 5px 25px;
+  display: inline-block;
+  margin: auto;
+  background: #662f2f;
+  font-size: 15px;
+  font-family: NotoReg;
+  margin-top: 20px;
+  outline: none;
+  transition: all .5s ease .3s;
+  opacity: 0;
+  position: relative;
+  top: 15px;
+}
+
+#newsSlider .slick-active .text-title, #newsSlider .slick-active .text-caption, #newsSlider .slick-active .general-button {
+  top: 0;
+  opacity: 1;
+}
+
+#newsSlider .slick-dots {
+  display: flex;
+  padding-top: 30px;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+}
+
+#newsSlider .slick-dots li {
+  width: 30px;
+  height: 8px;
+  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.88);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+#newsSlider .slick-dots li button {
+  display: none;
+}
+
+#newsSlider .slick-dots li.slick-active {
+  background: rgba(227, 208, 140, 0.78);
+}
+
+#seriesHighlights {
+  padding: 30px 0 30px;
+}
+
+#seriesHighlights .series-container {
+  justify-content: space-between;
+  display: flex;
+  width: 1000px;
+  margin: auto;
+}
+
+#seriesHighlights .series-container .w30 {
+  width: 300px;
+  opacity: 1;
+  padding: 10px 30px;
+  transition: all .3s ease;
+  outline: none;
+}
+
+#seriesHighlights .series-container .w30 img {
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
+#seriesHighlights .series-container .w30 .series-button {
+  font-family: MeriReg;
+  text-align: center;
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+  opacity: 0;
+  top: 10px;
+  transition: all .3s ease;
+  display: inline-block;
+  margin: auto;
+}
+
+#seriesHighlights .series-container:hover .w30 {
+  opacity: 0.5;
+}
+
+#seriesHighlights .series-container:hover .w30:hover {
+  opacity: 1;
+}
+
+#seriesHighlights .series-container:hover .w30:hover .series-button {
+  top: 0;
+  opacity: 1;
+}
+
+#seriesHighlights .series-title {
+  font-family: NotoBold;
+  font-size: 18px;
+  text-align: center;
+}
+
+#socialMedia {
+  display: none;
+  background: #191919;
+  background-image: url("../img/global/wood-bg.jpg");
+  padding: 30px 0 0;
+  color: white;
+}
+
+#socialMedia .social-parent {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#socialMedia .social-title {
+  text-align: center;
+  font-family: NotoBold;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+#socialMedia .social-target {
+  text-align: center;
+  font-family: SourceSans;
+  font-size: 16px;
+}
+
+#socialMedia .w30 {
+  position: relative;
+  width: 30%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+#socialMedia .w30 .img-parent {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -60%;
+  margin: auto;
+  position: absolute;
+  width: 90%;
+}
+
+#socialMedia .w30 img {
+  width: 100%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w70 {
+  width: 70%;
 }
 
 #parentContainer {
@@ -407,6 +619,7 @@ span.forarrow {
   display: block;
   display: inline-block;
   position: relative;
+  top: 1px;
   font-family: NotoReg;
 }
 

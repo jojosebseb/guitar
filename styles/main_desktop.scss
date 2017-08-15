@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    outline: none;
     // font-family: LatoReg;
 }
 a{
@@ -165,6 +166,196 @@ $container-width: 1100px;
     }
 }
 //Navbar
+
+//Index
+#newsSlider{
+    background: #eee;
+    position: relative;
+    #slider1{
+        background-image: url('../img/global/banner-9.jpg');
+    }
+    #slider2{
+        background-image: url('../img/global/banner-4.jpg');
+    }
+    #slider3{
+        background-image: url('../img/global/banner-6.jpg');
+    }
+    .slider-module{
+        min-height: 60vh;
+        background-size: cover;
+        background-position: center center;
+    }
+    .text-container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        font-family: MeriReg;
+        .text-title{
+            font-size: 30px;
+            font-family: MeriBold;
+            transition: all .5s ease;
+            opacity: 0;
+            position: relative;
+            top: 25px;
+        }
+        .text-caption{
+            margin-top: 10px;
+            font-size: 14px;
+            transition: all .5s ease .2s;
+            opacity: 0;
+            position: relative;
+            top: 15px;
+        }
+        .general-button{
+            padding: 5px 25px;
+            display: inline-block;
+            margin: auto;
+            background: rgb(102, 47, 47);
+            font-size: 15px;
+            font-family: NotoReg;
+            margin-top: 20px;
+            outline: none;
+            transition: all .5s ease .3s;
+            opacity: 0;
+            position: relative;
+            top: 15px;
+        }
+    }
+    .slick-active{
+        .text-title, .text-caption, .general-button{
+            top: 0;
+            opacity: 1;
+        }
+    }
+    .slick-dots{
+        display: flex;
+        padding-top: 30px;
+        width: 100%;
+        margin: auto;
+        justify-content: center;
+        position: absolute;
+        bottom: 30px;
+        li{
+            width: 30px;
+            height: 8px;
+            margin: 0 5px;
+            background: rgba(255, 255, 255, 0.88);
+            cursor: pointer;
+            transition: all .3s ease;
+            button{
+                display: none;
+            }
+        }
+        li.slick-active{
+            background: rgba(227, 208, 140, 0.78)
+        }
+    }
+}
+#seriesHighlights{
+    padding: 30px 0 30px;
+    .series-container{
+        justify-content: space-between;
+        display: flex;
+        width: 1000px;
+        margin: auto;
+        .w30{
+            width: 300px;
+            opacity: 1;
+            padding: 10px 30px;
+            transition: all .3s ease;
+            outline: none;
+            img{
+                margin: auto;
+                display: block;
+                width: 80%;
+            }
+            .series-button{
+                font-family: MeriReg;
+                text-align: center;
+                position: relative;
+                font-size: 14px;
+                width: 100%;
+                opacity: 0;
+                top: 10px;
+                transition: all .3s ease;
+                display: inline-block;
+                margin: auto;
+            }
+        }
+    }
+    .series-container:hover{
+        .w30{
+            opacity: 0.5;
+        }
+        .w30:hover{
+            opacity: 1;
+            .series-button{
+                top: 0;
+                opacity: 1;
+            }
+        }
+    }
+    .series-title{
+        font-family: NotoBold;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+#socialMedia{
+    display: none;
+    background: #191919;
+    background-image: url('../img/global/wood-bg.jpg');
+    padding: 30px 0 0;
+    color: white;
+    .social-parent{
+        width: 1000px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .social-title{
+        text-align: center;
+        font-family: NotoBold;
+        padding-bottom: 10px;
+        font-size: 18px;
+    }
+    .social-target{
+        text-align: center;
+        font-family: SourceSans;
+        font-size: 16px;
+    }
+    .w30{
+        position: relative;
+        width: 30%;
+        min-height: 400px;
+        overflow: hidden;
+        .img-parent{
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -60%;
+            margin: auto;
+            position: absolute;
+            width: 90%;
+        }
+        img{
+            width: 100%;
+
+        }
+    }
+}
+
+.w30{
+    width: 30%;
+}
+.w70{
+    width: 70%;
+}
+
+//Index
 
 //parentContainer
 #parentContainer{
@@ -403,7 +594,7 @@ span.forarrow {
     display: block;
     display: inline-block;
     position: relative;
-    // top: 1px;
+    top: 1px;
     font-family: NotoReg;
 }
 //productList
@@ -841,7 +1032,6 @@ span.forarrow {
         li.slick-active{
             background: rgba(227, 208, 140, 0.78)
         }
-
     }
     .feature-slider{
         padding: 20px 0 ;

@@ -8,11 +8,8 @@
 
     <title>Sebb Guitars</title>
 
-    <!-- cloud css start -->
-    <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/slick-1.6.0.css" />
-    <!-- cloud css end-->
-
     <!-- local css start -->
+    <link rel="stylesheet" type="text/css" href="styles/slick-1.6.0.css" />
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 1050px)" href="styles/main_desktop.css" />
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 1049px)" href="styles/main_mobile.css" />
     <!-- local css end -->
@@ -21,10 +18,12 @@
     <div id="navbar">
         <div class="container flex">
             <div class="logo-container">
-                <img src="img/global/s-logo.png" alt="" class="logo-img">
-                <span class="logo-text">
-                    ebastian Guitars.
-                </span>
+                <a href="index.html">
+                    <img src="img/global/s-logo.png" alt="" class="logo-img">
+                    <span class="logo-text">
+                        ebastian Guitars.
+                    </span>
+                </a>
             </div>
             <ul class="nav-ul">
 
@@ -49,11 +48,133 @@
     </div>
 
     <div id="parentContainer">
-        <div class="section-container" id="indexSlider">
-            <div class="container">
-                asd
+        <div class="section-container" id="newsSlider">
+            <div class="slider-module" id="slider1">
+                <div class="fader"></div>
+                <div class="text-container">
+                    <div class="text-title">
+                        Fingerstyle Competition
+                    </div>
+                    <div class="text-caption">
+                        Participate to have a chance of winning up to IDR 10,000,000 in voucher!
+                    </div>
+                    <a href="#" class="general-button">Read More</a>
+                </div>
+            </div>
+            <div class="slider-module" id="slider2">
+                <div class="fader"></div>
+                <div class="text-container">
+                    <div class="text-title">
+                        Mastercraft Series
+                    </div>
+                    <div class="text-caption">
+                        Crafted beyond expectation. Experience the pinnacle of our craftmanship.
+                    </div>
+                    <a href="#" class="general-button">Explore</a>
+                </div>
+            </div>
+            <div class="slider-module" id="slider3">
+                <div class="fader"></div>
+                <div class="text-container">
+                    <div class="text-title">
+                        What Sets Us Apart
+                    </div>
+                    <div class="text-caption">
+                        One goal, years of experience. The things we picked up in our journey is what makes us.
+                    </div>
+                    <a href="#" class="general-button">Explore</a>
+                </div>
             </div>
         </div>
+        <div class="section-container" id="seriesHighlights">
+            <div class="section-title">
+                Our Series
+            </div>
+            <div class="section-caption">
+                A guitar that suit every player's need
+            </div>
+            <div class="series-container">
+                <div class="w30">
+                    <div class="series-title">
+                        The Essential
+                    </div>
+                    <img src="img/guitars/g3.jpg" alt="">
+                    <a href="" class="series-button">
+                        Explore Series
+                        <span class="forarrow">>></span>
+                    </a>
+                </div>
+                <div class="w30">
+                    <div class="series-title">
+                        The Exceptional
+                    </div>
+                    <img src="img/guitars/gc1.jpg" alt="">
+                    <a href="" class="series-button">
+                        Explore Series
+                        <span class="forarrow">>></span>
+                    </a>
+                </div>
+                <div class="w30">
+                    <div class="series-title">
+                        The Mastercraft
+                    </div>
+                    <img src="img/guitars/bar1.jpg" alt="">
+                    <a href="" class="series-button">
+                        Explore Series
+                        <span class="forarrow">>></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="section-container" id="socialMedia">
+            <div class="section-title">
+                Get in touch!
+            </div>
+            <div class="section-caption">
+                Get access to our latest news, offers, and more
+            </div>
+            <div class="social-parent">
+                <div class="w30">
+                    <div class="social-title">
+                        Instagram
+                    </div>
+                    <div class="social-target">
+                        @sebbsguitars
+                    </div>
+                    <div class="img-parent">
+                        <img src="img/global/ip-template.png" alt="">
+                    </div>
+
+                </div>
+                <div class="w30">
+                    <div class="social-title">
+                        YouTube
+                    </div>
+                    <div class="social-target">
+                        @sebbsguitars
+                    </div>
+                    <div class="img-parent">
+                        <img src="img/global/yt-dummy.png" alt="">
+                    </div>
+
+                </div>
+                <div class="w30">
+                    <div class="social-title">
+                        Facebook
+                    </div>
+                    <div class="social-target">
+                        @sebbsguitars
+                    </div>
+                    <div class="img-parent">
+                        <img src="img/global/ip-template.png" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div> -->
+
     </div>
 
     <div id="footer">
@@ -73,12 +194,13 @@
 
 </body>
     <!-- cloud js start -->
-    <script type="text/javascript" src="http://js.static.sldclc.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="http://js.static.sldclc.com/angular.1.6.min.js"></script>
-    <script type="text/javascript" src="http://js.static.sldclc.com/slick-1.6.0.min.js"></script>
     <!-- cloud js end   -->
 
     <!-- local js start -->
+    <script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="script/slick-1.6.0.min.js"></script>
     <script type="text/javascript" src="script/jquery.js"></script>
     <!-- local js end   -->
 

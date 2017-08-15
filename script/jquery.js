@@ -88,3 +88,46 @@ $('.product-thumbnail').slick({
   },
 ]
 })
+
+$('#newsSlider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    dots: true,
+    fade: true,
+    responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: false,
+      dots: true,
+    }
+  },
+]
+})
+
+$('.series-container').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    dots: true,
+    variableWidth: true,
+    responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: false,
+      centerMode: true,
+      dots: true,
+    }
+  },
+]
+})
