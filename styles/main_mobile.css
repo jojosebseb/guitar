@@ -579,7 +579,7 @@ a {
 }
 
 #productList .product-module:hover img {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 #productList .product-module:hover .badge {
