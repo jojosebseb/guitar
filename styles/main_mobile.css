@@ -201,6 +201,8 @@ a {
 #newsSlider {
   background: #eee;
   position: relative;
+  top: -53px;
+  margin-bottom: -53px;
 }
 
 #newsSlider #slider1 {
