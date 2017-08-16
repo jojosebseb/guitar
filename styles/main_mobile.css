@@ -218,7 +218,7 @@ a {
 }
 
 #newsSlider .slider-module {
-  min-height: 100vh;
+  min-height: 90vh;
   background-size: cover;
   background-position: center center;
 }
@@ -313,19 +313,44 @@ a {
   margin: auto;
 }
 
+#seriesHighlights .series-container .forarrow {
+  top: 0;
+}
+
 #seriesHighlights .series-container .w30 {
   width: 300px;
   margin: auto;
   opacity: 1;
-  padding: 10px 30px;
+  padding: 10px 10px;
   transition: all .3s ease;
   outline: none;
+}
+
+#seriesHighlights .series-container .w30 .series-title {
+  font-family: NotoBold;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  position: relative;
+  transition: all .5s ease .7s;
+}
+
+#seriesHighlights .series-container .w30 .series-caption {
+  text-align: center;
+  font-family: MeriReg;
+  font-size: 11px;
+  padding-bottom: 10px;
+  opacity: 0;
+  transition: all .5s ease .1s;
+  width: 100%;
 }
 
 #seriesHighlights .series-container .w30 img {
   margin: auto;
   display: block;
   width: 80%;
+  opacity: 0;
+  transition: all .8s ease .3s;
 }
 
 #seriesHighlights .series-container .w30 .series-button {
@@ -336,15 +361,29 @@ a {
   width: 100%;
   opacity: 1;
   top: 0px;
-  transition: all .3s ease;
   display: inline-block;
   margin: auto;
+  opacity: 0;
+  top: 10px;
+  transition: all .5s ease .5s;
 }
 
-#seriesHighlights .series-title {
-  font-family: NotoBold;
-  font-size: 18px;
-  text-align: center;
+#seriesHighlights .series-container .w30.slick-current .series-title {
+  opacity: 1;
+  top: 0;
+}
+
+#seriesHighlights .series-container .w30.slick-current .series-caption {
+  opacity: 1;
+}
+
+#seriesHighlights .series-container .w30.slick-current img {
+  opacity: 1;
+}
+
+#seriesHighlights .series-container .w30.slick-current .series-button {
+  top: 0;
+  opacity: 1;
 }
 
 #parentContainer {
@@ -419,8 +458,29 @@ a {
   opacity: 0.3;
 }
 
+#productBanner {
+  background-image: url("../img/global/banner-5.jpg");
+  background-position: center bottom;
+  height: 40vh;
+  display: none;
+}
+
+#productBanner .slider-text {
+  top: auto;
+  left: 50%;
+  bottom: 0%;
+  padding-left: 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+#productBanner .slider-text .banner-caption {
+  padding-left: 20px;
+}
+
 #productDetail .flex {
   flex-wrap: wrap;
+  padding: 0;
 }
 
 #productDetail img {
@@ -454,19 +514,17 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 100px;
 }
 
 #productDetail .wRight {
   width: 100%;
   padding: 10px 0px;
+  z-index: 5;
 }
 
 #productDetail .wRight .form-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin-bottom: 10px;
   font-family: MeriReg;
@@ -474,7 +532,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid #eee;
 }
 
 #productDetail .wRight .form-header .breadcrumb {
@@ -482,7 +539,7 @@ a {
   display: flex;
   font-size: 12px;
   font-family: NotoReg;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   opacity: 0.6;
 }
 
@@ -491,26 +548,28 @@ a {
 }
 
 #productDetail .wRight .form-header .title {
-  font-size: 22px;
+  font-size: 20px;
   font-family: NotoBold;
+  opacity: 0.8;
 }
 
 #productDetail .wRight .form-header .series {
   font-size: 12px;
   font-style: italic;
-  opacity: 0.7;
   letter-spacing: 1px;
+  opacity: 0.8;
 }
 
 #productDetail .wRight .form-header .price {
-  font-size: 22px;
+  font-size: 20px;
   font-family: NotoBold;
-  letter-spacing: 1px;
   text-align: right;
+  opacity: 0.8;
 }
 
 #productDetail .wRight .form-header .price .unit {
-  font-size: 14px;
+  font-size: 12px;
+  font-family: NotoReg;
   letter-spacing: 0;
 }
 
@@ -543,14 +602,15 @@ a {
 #productDetail .product-thumbnail {
   width: 100%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: -100px;
 }
 
 #productDetail .product-thumbnail .thumbnail-module {
   opacity: 1;
-  margin: 0 10px;
+  margin: 0 0px;
 }
 
 #productDetail .title {
@@ -622,6 +682,7 @@ span.forarrow {
   display: flex;
   position: relative;
   cursor: pointer;
+  outline: none;
 }
 
 #productList .product-module .fader {
@@ -663,7 +724,7 @@ span.forarrow {
   text-align: left;
   padding: 5px 0;
   font-family: NotoBold;
-  color: #888;
+  color: #555;
 }
 
 #productList .product-module .price .unit {
@@ -675,7 +736,6 @@ span.forarrow {
   font-size: 18px;
   font-family: NotoBold;
   opacity: 1;
-  letter-spacing: 1px;
 }
 
 #productList .product-module img {
@@ -783,8 +843,6 @@ span.forarrow {
   margin: auto;
   font-size: 12px;
   font-family: NotoReg;
-  padding-top: 10px;
-  padding-left: 10px;
   text-align: left;
 }
 

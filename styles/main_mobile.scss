@@ -207,7 +207,7 @@ $container-width: 100%;
         background-image: url('../img/global/banner-6.jpg');
     }
     .slider-module{
-        min-height: 100vh;
+        min-height: 90vh;
         background-size: cover;
         background-position: center center;
     }
@@ -290,17 +290,40 @@ $container-width: 100%;
         justify-content: space-between;
         width: 100%;
         margin: auto;
+        .forarrow{
+            top: 0;
+        }
         .w30{
             width: 300px;
             margin: auto;
             opacity: 1;
-            padding: 10px 30px;
+            padding: 10px 10px;
             transition: all .3s ease;
             outline: none;
+            .series-title{
+                font-family: NotoBold;
+                font-size: 18px;
+                text-align: center;
+                opacity: 0;
+                position: relative;
+
+                transition: all .5s ease .7s;
+            }
+            .series-caption{
+                text-align: center;
+                font-family: MeriReg;
+                font-size: 11px;
+                padding-bottom: 10px;
+                opacity: 0;
+                transition: all .5s ease .1s;
+                width: 100%;
+            }
             img{
                 margin: auto;
                 display: block;
                 width: 80%;
+                opacity: 0;
+                transition: all .8s ease .3s;
             }
             .series-button{
                 font-family: MeriReg;
@@ -310,17 +333,31 @@ $container-width: 100%;
                 width: 100%;
                 opacity: 1;
                 top: 0px;
-                transition: all .3s ease;
                 display: inline-block;
                 margin: auto;
+                opacity: 0;
+                top: 10px;
+                transition: all .5s ease .5s;
+            }
+        }
+        .w30.slick-current{
+            .series-title{
+                opacity: 1;
+                top: 0;
+            }
+            .series-caption{
+                opacity: 1;
+            }
+            img{
+                opacity: 1;
+            }
+            .series-button{
+                top: 0;
+                opacity: 1;
             }
         }
     }
-    .series-title{
-        font-family: NotoBold;
-        font-size: 18px;
-        text-align: center;
-    }
+
 }
 //Index
 //parentContainer
@@ -391,9 +428,27 @@ $container-width: 100%;
     opacity: 0.3;
 }
 //productDetail
+#productBanner{
+    background-image: url('../img/global/banner-5.jpg');
+    background-position: center bottom;
+    height: 40vh;
+    display: none;
+    .slider-text{
+        top: auto;
+        left: 50%;
+        bottom: 0%;
+        padding-left: 10px;
+        display: flex;
+        align-items: baseline;
+        .banner-caption{
+            padding-left: 20px;
+        }
+    }
+}
 #productDetail{
     .flex{
         flex-wrap: wrap;
+        padding: 0;
         // justify-content: center;
     }
     img{
@@ -426,16 +481,19 @@ $container-width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding-top: 100px;
+        // padding-top: 100px;
     }
     .wRight{
         width: 100%;
         padding: 10px 0px;
+        z-index: 5;
         .form-header{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // width: 100%;
+            color: white;
+            background: rgba(0,0,0,0.3);
             padding: 10px;
             margin-bottom: 10px;
             font-family: MeriReg;
@@ -443,35 +501,37 @@ $container-width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            border-bottom: 1px solid #eee;
+            // border-bottom: 1px solid #eee;
             .breadcrumb{
                 width: 100%;
                 display: flex;
                 font-size: 12px;
                 font-family: NotoReg;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
                 opacity: 0.6;
                 .seperator{
                     padding: 0 10px;
                 }
             }
             .title{
-                font-size: 22px;
+                font-size: 20px;
                 font-family: NotoBold;
+                opacity: 0.8;
             }
             .series{
                 font-size: 12px;
                 font-style: italic;
-                opacity: 0.7;
                 letter-spacing: 1px;
+                opacity: 0.8;
             }
             .price{
-                font-size: 22px;
+                font-size: 20px;
                 font-family: NotoBold;
-                letter-spacing: 1px;
                 text-align: right;
+                opacity: 0.8;
                 .unit{
-                    font-size: 14px;
+                    font-size: 12px;
+                    font-family: NotoReg;
                     letter-spacing: 0;
                 }
             }
@@ -510,12 +570,13 @@ $container-width: 100%;
     .product-thumbnail{
         width: 100%;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 0px;
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: -100px;
         .thumbnail-module{
             opacity: 1;
-            margin: 0 10px;
+            margin: 0 0px;
         }
     }
     .title{
@@ -579,16 +640,15 @@ span.forarrow {
     .product-module{
         width: 100%;
         margin-bottom: 30px;
-        // border-radius: 10px;
         display: flex;
         position: relative;
         cursor: pointer;
+        outline: none;
         .fader{
             display: none;
         }
         .img-container{
             width: 50%;
-            // border-right: 1px solid #aaa;
             img{
                 width: 100%;
                 margin: auto;
@@ -619,7 +679,7 @@ span.forarrow {
             text-align: left;
             padding: 5px 0;
             font-family: NotoBold;
-            color: #888;
+            color: #555;
             .unit{
                 font-size: 10px;
                 margin-right: 5px;
@@ -629,7 +689,7 @@ span.forarrow {
             font-size: 18px;
             font-family: NotoBold;
             opacity: 1;
-            letter-spacing: 1px;
+            // letter-spacing: 1px;
         }
         img{
             transition: all .3s ease;
@@ -731,8 +791,8 @@ span.forarrow {
     margin: auto;
     font-size: 12px;
     font-family: NotoReg;
-    padding-top: 10px;
-    padding-left: 10px;
+    // padding-top: 10px;
+    // padding-left: 10px;
     text-align: left;
     // width: 100%;
     a{

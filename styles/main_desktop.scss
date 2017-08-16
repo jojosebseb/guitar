@@ -256,6 +256,13 @@ $container-width: 1100px;
 }
 #seriesHighlights{
     padding: 30px 0 30px;
+    .forarrow{
+        top: 0;
+        left: -3px;
+    }
+    .slick-list{
+        margin: auto;
+    }
     .series-container{
         justify-content: space-between;
         display: flex;
@@ -267,6 +274,7 @@ $container-width: 1100px;
             padding: 10px 30px;
             transition: all .3s ease;
             outline: none;
+            cursor: pointer;
             img{
                 margin: auto;
                 display: block;
@@ -302,6 +310,16 @@ $container-width: 1100px;
         font-family: NotoBold;
         font-size: 18px;
         text-align: center;
+
+    }
+    .series-caption{
+        text-align: center;
+        font-family: MeriReg;
+        font-size: 11px;
+        padding-bottom: 10px;
+        transition: all .5s ease .1s;
+        width: 100%;
+
     }
 }
 
@@ -430,6 +448,21 @@ $container-width: 1100px;
     transform: translateY(-50%) rotateZ(-145deg);
 }
 //productDetail
+#productBanner{
+    background-image: url('../img/global/banner-5.jpg');
+    background-position: center bottom;
+    min-height: 40vw;
+    .slider-text{
+        top: auto;
+        left: 25%;
+        bottom: 0%;
+        display: flex;
+        align-items: baseline;
+        .banner-caption{
+            padding-left: 20px;
+        }
+    }
+}
 #productDetail{
     .flex{
         flex-wrap: wrap;
@@ -501,7 +534,7 @@ $container-width: 1100px;
             .price{
                 font-size: 25px;
                 font-family: NotoBold;
-                letter-spacing: 1px;
+                letter-spacing: 0px;
                 .unit{
                     font-size: 14px;
                     letter-spacing: 0;
@@ -889,6 +922,7 @@ span.forarrow {
 
 #bracingParent{
     // padding-bottom: 40px;
+    padding: 40px 0;
     .container{
         display: flex;
         justify-content: space-between;
@@ -914,7 +948,7 @@ span.forarrow {
     color: white;
 }
 #namingParent{
-    margin: 50px 0;
+    margin: 0px 0 50px;
     padding-bottom: 40px;
     text-align: center;
     .black-bg{
@@ -1082,9 +1116,6 @@ span.forarrow {
             }
         }
         .feature-module:hover{
-            img{
-                transform: translate(-50%, -50%) scale(1.1);
-            }
         }
         .feature-module.slick-active{
             .feature-title, .feature-paragraph{

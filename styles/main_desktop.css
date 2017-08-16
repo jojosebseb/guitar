@@ -261,6 +261,15 @@ a {
   padding: 30px 0 30px;
 }
 
+#seriesHighlights .forarrow {
+  top: 0;
+  left: -3px;
+}
+
+#seriesHighlights .slick-list {
+  margin: auto;
+}
+
 #seriesHighlights .series-container {
   justify-content: space-between;
   display: flex;
@@ -274,6 +283,7 @@ a {
   padding: 10px 30px;
   transition: all .3s ease;
   outline: none;
+  cursor: pointer;
 }
 
 #seriesHighlights .series-container .w30 img {
@@ -312,6 +322,15 @@ a {
   font-family: NotoBold;
   font-size: 18px;
   text-align: center;
+}
+
+#seriesHighlights .series-caption {
+  text-align: center;
+  font-family: MeriReg;
+  font-size: 11px;
+  padding-bottom: 10px;
+  transition: all .5s ease .1s;
+  width: 100%;
 }
 
 #socialMedia {
@@ -445,6 +464,24 @@ a {
   transform: translateY(-50%) rotateZ(-145deg);
 }
 
+#productBanner {
+  background-image: url("../img/global/banner-5.jpg");
+  background-position: center bottom;
+  min-height: 40vw;
+}
+
+#productBanner .slider-text {
+  top: auto;
+  left: 25%;
+  bottom: 0%;
+  display: flex;
+  align-items: baseline;
+}
+
+#productBanner .slider-text .banner-caption {
+  padding-left: 20px;
+}
+
 #productDetail .flex {
   flex-wrap: wrap;
 }
@@ -527,7 +564,7 @@ a {
 #productDetail .wRight .form-header .price {
   font-size: 25px;
   font-family: NotoBold;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 }
 
 #productDetail .wRight .form-header .price .unit {
@@ -941,6 +978,10 @@ span.forarrow {
   padding-right: 5px;
 }
 
+#bracingParent {
+  padding: 40px 0;
+}
+
 #bracingParent .container {
   display: flex;
   justify-content: space-between;
@@ -965,7 +1006,7 @@ span.forarrow {
 }
 
 #namingParent {
-  margin: 50px 0;
+  margin: 0px 0 50px;
   padding-bottom: 40px;
   text-align: center;
 }
@@ -1161,10 +1202,6 @@ span.forarrow {
   opacity: 0;
   top: 10px;
   transition: all .5s ease 0.5s;
-}
-
-#featureBelt .feature-slider .feature-module:hover img {
-  transform: translate(-50%, -50%) scale(1.1);
 }
 
 #featureBelt .feature-slider .feature-module.slick-active .feature-title, #featureBelt .feature-slider .feature-module.slick-active .feature-paragraph {
