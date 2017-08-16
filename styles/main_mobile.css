@@ -299,8 +299,40 @@ a {
   background: rgba(227, 208, 140, 0.78);
 }
 
+#conceptParent {
+  background: #191919;
+  color: white;
+  padding: 30px;
+}
+
+#conceptParent .flex {
+  flex-wrap: wrap;
+}
+
+#conceptParent .w40, #conceptParent .w60 {
+  width: 100%;
+}
+
+#conceptParent .section-title {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+#conceptParent .section-paragraph {
+  font-size: 12px;
+  font-family: MeriReg;
+  color: #999;
+  padding-right: 30px;
+  line-height: 22px;
+}
+
+#conceptParent img {
+  width: 100%;
+  display: block;
+}
+
 #seriesHighlights {
-  padding: 30px 0 0px;
+  padding: 30px 0 30px;
 }
 
 #seriesHighlights .slick-dots {
@@ -386,6 +418,69 @@ a {
   opacity: 1;
 }
 
+#indexGallery {
+  background: #191919;
+  padding: 30px 0;
+  color: white;
+}
+
+#indexGallery .section-caption a {
+  display: inline-block;
+}
+
+#indexGallery .instagram-belt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+#indexGallery .instagram-belt .instagram-module {
+  width: 33.33vw;
+  position: relative;
+  height: 33.33vw;
+  overflow: hidden;
+  border: 1px solid #222;
+  cursor: pointer;
+}
+
+#indexGallery .instagram-belt .instagram-module .hover-tint {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+#indexGallery .instagram-belt .instagram-module .text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: NotoBold;
+  z-index: 6;
+  color: black;
+}
+
+#indexGallery .instagram-belt .instagram-module img {
+  display: block;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#indexGallery .instagram-belt .instagram-module:hover .hover-tint {
+  opacity: 1;
+}
+
 #parentContainer {
   min-height: 95vh;
   background: white;
@@ -459,10 +554,10 @@ a {
 }
 
 #productBanner {
+  display: none;
   background-image: url("../img/global/banner-5.jpg");
   background-position: center bottom;
-  height: 40vh;
-  display: none;
+  height: 30vh;
 }
 
 #productBanner .slider-text {
@@ -518,13 +613,13 @@ a {
 
 #productDetail .wRight {
   width: 100%;
-  padding: 10px 0px;
+  padding: 0px 0px 10px;
   z-index: 5;
 }
 
 #productDetail .wRight .form-header {
   color: white;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   margin-bottom: 10px;
   font-family: MeriReg;
@@ -605,7 +700,7 @@ a {
   margin-top: 0px;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: -100px;
+  margin-bottom: -74px;
 }
 
 #productDetail .product-thumbnail .thumbnail-module {
@@ -769,6 +864,10 @@ span.forarrow {
 #productList .center a {
   display: inline;
   text-decoration: underline;
+}
+
+#woodBanner {
+  background-image: url("../img/global/banner-x.jpg");
 }
 
 .section-title {

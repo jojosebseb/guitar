@@ -96,6 +96,8 @@ $('#newsSlider').slick({
     arrows: false,
     dots: true,
     fade: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
     responsive: [
   {
     breakpoint: 1024,
@@ -104,6 +106,7 @@ $('#newsSlider').slick({
       slidesToScroll: 1,
       infinite: false,
       arrows: false,
+      swipe: true,
       dots: true,
     }
   },
