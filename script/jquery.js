@@ -130,3 +130,23 @@ $('.series-container').slick({
  },
 ]
 })
+
+$('.mobile-filter').on('click', function(){
+    $('.product-filter').toggleClass('active');
+})
+
+var data, tempId, tempVal;
+$('.filter-content-parent').on( 'click', '.filter-buble', function(){
+    $(this).remove();
+    data = $(this).data('for-target');
+    console.log(data);
+    $('#'+data).prop('checked', false);
+})
+
+$('.filter-check').on('click', function(){
+    if($(this).prop('checked') == true){
+        tempId = $(this).attr('id');
+        tempVal = $(this).val();
+        $('.filter-content-parent').append('<div class="filter-buble" data-for-target="'+tempId+'">'+tempVal+'</div>')
+    }
+})

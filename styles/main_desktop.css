@@ -717,6 +717,10 @@ span.forarrow {
   padding-bottom: 30px;
 }
 
+#productList .mobile-filter {
+  display: none;
+}
+
 #productList .title {
   font-size: 24px;
 }
@@ -725,11 +729,76 @@ span.forarrow {
   font-size: 12px;
 }
 
+#productList .flex-container {
+  display: flex;
+  padding-top: 20px;
+}
+
+#productList .forarrow {
+  top: 1px;
+  left: -1px;
+}
+
+#productList .filter-title {
+  font-family: MeriBold;
+  font-size: 14px;
+}
+
+#productList .filter-module {
+  padding-top: 15px;
+}
+
+#productList .filter-choice {
+  padding-top: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#productList .filter-check {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+#productList .choice-box {
+  font-size: 12px;
+  padding: 3px 0;
+  font-family: NotoReg;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#productList .choice-box label {
+  cursor: pointer;
+}
+
+#productList .choice-box:hover {
+  opacity: 0.8;
+}
+
+#productList .choice-box.w50 {
+  width: 50%;
+}
+
+#productList .product-filter {
+  width: 20%;
+  border-right: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+  padding-right: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
 #productList .product-flex {
   display: flex;
   flex-wrap: wrap;
   margin-top: 0px;
-  padding-top: 20px;
+  padding-left: 20px;
+  width: 80%;
 }
 
 #productList .product-module {
@@ -747,16 +816,17 @@ span.forarrow {
 }
 
 #productList .product-module .view-btn {
-  font-size: 15px;
+  font-size: 14px;
   padding: 5px 0;
   margin-top: 5px;
   width: 100%;
   text-align: center;
-  transition: all .5s ease;
+  transition: all .3s ease;
   background: #191919;
   color: white;
   display: block;
   font-family: SourceSans;
+  border: 1px solid #191919;
 }
 
 #productList .product-module .forarrow {
@@ -764,8 +834,9 @@ span.forarrow {
 }
 
 #productList .product-module .view-btn:hover {
-  background: black;
-  color: white;
+  background: #eee;
+  color: #191919;
+  border: 1px solid #aaa;
 }
 
 #productList .product-module .price {
@@ -833,6 +904,40 @@ span.forarrow {
 #productList .center a {
   display: inline;
   text-decoration: underline;
+}
+
+.filter-content-parent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-buble {
+  background: #eee;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 5px 10px;
+  padding-right: 35px;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-buble:after {
+  content: "x";
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-family: SourceSans;
+  width: 15px;
+  height: 15px;
+  line-height: 12px;
+  border-radius: 50%;
 }
 
 #woodBanner {

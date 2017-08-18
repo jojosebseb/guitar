@@ -776,7 +776,6 @@ span.forarrow {
   margin-bottom: 30px;
   display: flex;
   position: relative;
-  cursor: pointer;
   outline: none;
 }
 
@@ -806,11 +805,6 @@ span.forarrow {
   bottom: 40px;
   right: 30px;
   border-bottom: 1px solid #888;
-}
-
-#productList .product-module .view-btn:hover {
-  background: white;
-  color: black;
 }
 
 #productList .product-module .price {
@@ -849,10 +843,6 @@ span.forarrow {
   justify-content: flex-start;
 }
 
-#productList .product-module:hover img {
-  opacity: 1;
-}
-
 #productList .center {
   text-align: center;
   padding-bottom: 15px;
@@ -864,6 +854,115 @@ span.forarrow {
 #productList .center a {
   display: inline;
   text-decoration: underline;
+}
+
+.mobile-filter {
+  padding-left: 10px;
+  background: #333;
+  color: #eee;
+  font-size: 12px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.product-filter {
+  position: fixed;
+  z-index: 557;
+  text-align: left;
+  background: white;
+  left: -350px;
+  top: 0;
+  padding: 20px;
+  padding-top: 80px;
+  overflow: hidden;
+  width: 250px;
+  height: 100%;
+  transition: all .3s ease;
+}
+
+.product-filter .mobile-filter {
+  display: inline-block;
+  float: right;
+  top: -15px;
+  right: -15px;
+}
+
+.product-filter .filter-title {
+  font-family: MeriBold;
+  font-size: 14px;
+}
+
+.product-filter .filter-module {
+  padding-top: 15px;
+}
+
+.product-filter .filter-choice {
+  padding-top: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-filter .filter-check {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.product-filter .choice-box {
+  font-size: 12px;
+  padding: 3px 0;
+  font-family: NotoReg;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.product-filter .choice-box label {
+  cursor: pointer;
+}
+
+.product-filter.active {
+  left: 0;
+  box-shadow: 150px 0px 0px 0px rgba(0, 0, 0, 0.7);
+}
+
+.filter-content-parent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.filter-buble {
+  background: #eee;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+  padding-right: 35px;
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.filter-buble:after {
+  content: "x";
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-family: SourceSans;
+  width: 15px;
+  height: 15px;
+  line-height: 12px;
+  border-radius: 50%;
 }
 
 #woodBanner {
