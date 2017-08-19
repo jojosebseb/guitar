@@ -691,6 +691,8 @@ span.forarrow {
     .flex-container{
         display: flex;
         padding-top: 20px;
+        min-height: 75vh;
+        align-items: flex-start;
     }
     .forarrow{
         top: 1px;
@@ -733,7 +735,7 @@ span.forarrow {
     }
     .product-filter{
         width: 20%;
-        border-right: 1px solid #eee;
+        // border-right: 1px solid #eee;
         text-align: left;
         font-size: 14px;
         padding-right: 5px;
@@ -747,6 +749,8 @@ span.forarrow {
         margin-top: 0px;
         padding-left: 20px;
         width: 80%;
+        border-left: 1px solid #eee;
+        transition: all .3s ease;
     }
     .product-module{
         width: 23%;
@@ -754,7 +758,10 @@ span.forarrow {
         margin-bottom: 30px;
         border-radius: 10px;
         position: relative;
+        overflow: hidden;
+        transition: all .8s cubic-bezier(0.71, 0.06, 0.25, 1);
         cursor: pointer;
+        left: 0;
         .fader{
             opacity: 0;
             transition: all .3s ease;
@@ -771,15 +778,13 @@ span.forarrow {
             color: white;
             display: block;
             font-family: SourceSans;
-            border: 1px solid #191919;
         }
         .forarrow{
             top: 1px;
         }
         .view-btn:hover{
-            background: #eee;
-            color: #191919;
-            border: 1px solid #aaa;
+            background: #555;
+            color: #eee;
         }
         .price{
             font-size: 15px;
@@ -788,10 +793,11 @@ span.forarrow {
             width: 100%;
             font-family: NotoBold;
             color: #555;
-            .unit{
-                font-size: 10px;
-                margin-right: 3px;
-            }
+        }
+        .price:before{
+            content: "IDR";
+            font-size: 10px;
+            margin-right: 3px;
         }
         .detail{
             font-size: 16px;
@@ -802,7 +808,7 @@ span.forarrow {
         }
         img{
             transition: all .3s ease;
-            max-width: 70%;
+            max-width: 130px;
             margin: auto;
             display: block;
             border-radius: 10px;
@@ -811,7 +817,7 @@ span.forarrow {
             // position: absolute;
             text-align: left;
             border-top: 1px solid #eee;
-            width: 85%;
+            width: 170px;
             margin: auto;
             display: flex;
             flex-wrap: wrap;
@@ -819,6 +825,9 @@ span.forarrow {
             justify-content: space-between;
             padding: 5px 5px;
         }
+    }
+    .tags{
+        display: none;
     }
     .product-module:hover{
         .view-btn{
@@ -830,6 +839,14 @@ span.forarrow {
         .badge{
             right: 0;
         }
+    }
+    .product-module.hidden{
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        height: 0;
+        left: 50px;
+        top: -30px;
     }
     .center{
         text-align: center;
@@ -850,6 +867,8 @@ span.forarrow {
     flex-wrap: wrap;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    min-height: 43px;
+    align-items: flex-start;
 }
 .filter-buble{
     background: #eee;
@@ -858,9 +877,13 @@ span.forarrow {
     padding: 5px 10px;
     padding-right: 35px;
     position: relative;
-    margin-right: 10px;
+    margin-right: 5px;
     cursor: pointer;
     margin-bottom: 5px;
+    transition: all .1s ease;
+}
+.filter-buble:hover{
+    opacity: 0.6;
 }
 .filter-buble:after{
     content: "x";

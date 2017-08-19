@@ -135,18 +135,44 @@ $('.mobile-filter').on('click', function(){
     $('.product-filter').toggleClass('active');
 })
 
-var data, tempId, tempVal;
+var data, tempId, tempVal, curTags, tempIndex;
+var currentFilter = [];
+
 $('.filter-content-parent').on( 'click', '.filter-buble', function(){
     $(this).remove();
     data = $(this).data('for-target');
-    console.log(data);
     $('#'+data).prop('checked', false);
+    tempIndex = currentFilter.indexOf(tempVal);
+    currentFilter.splice(tempIndex, 1);
+    filterFunc();
 })
 
 $('.filter-check').on('click', function(){
+    tempId = $(this).attr('id');
+    tempVal = $(this).val();
+
     if($(this).prop('checked') == true){
-        tempId = $(this).attr('id');
-        tempVal = $(this).val();
-        $('.filter-content-parent').append('<div class="filter-buble" data-for-target="'+tempId+'">'+tempVal+'</div>')
+        $('.filter-content-parent').append('<div class="filter-buble" data-for-target="'+tempId+'">'+tempVal+'</div>');
+        currentFilter.push(tempVal);
+    }else{
+        $('*[data-for-target="'+tempId+'"]').remove();
+        tempIndex = currentFilter.indexOf(tempVal);
+        currentFilter.splice(tempIndex, 1);
     }
+    filterFunc();
 })
+
+function filterFunc(){
+    $('.product-module').addClass('hidden');
+    $('.product-module').each(function(e){
+        curTags = $(this).find('.tags').html();
+        for (var i = 0; i < currentFilter.length; i++) {
+            if (curTags.includes(currentFilter[i]) == true) {
+                $(this).removeClass('hidden');                
+            }
+        }
+    });
+    if (currentFilter.length === 0) {
+        $('.product-module').removeClass('hidden');
+    }
+}

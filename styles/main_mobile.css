@@ -843,6 +843,10 @@ span.forarrow {
   justify-content: flex-start;
 }
 
+#productList .product-module.hidden {
+  display: none;
+}
+
 #productList .center {
   text-align: center;
   padding-bottom: 15px;
@@ -952,17 +956,21 @@ span.forarrow {
 }
 
 .filter-buble:after {
-  content: "x";
+  content: "+";
   background: #fff;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotateZ(45deg);
   right: 10px;
   font-family: SourceSans;
   width: 15px;
   height: 15px;
-  line-height: 12px;
+  line-height: 14px;
   border-radius: 50%;
+}
+
+.tags {
+  display: none;
 }
 
 #woodBanner {

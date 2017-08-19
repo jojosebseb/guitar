@@ -781,6 +781,9 @@ span.forarrow {
             // padding: 5px 15px;
         }
     }
+    .product-module.hidden{
+        display: none;
+    }
     .center{
         text-align: center;
         padding-bottom: 15px;
@@ -878,17 +881,20 @@ span.forarrow {
     margin-bottom: 5px;
 }
 .filter-buble:after{
-    content: "x";
+    content: "+";
     background: #fff;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotateZ(45deg);
     right: 10px;
     font-family: SourceSans;
     width: 15px;
     height: 15px;
-    line-height: 12px;
+    line-height: 14px;
     border-radius: 50%;
+}
+.tags{
+    display: none;
 }
 //productList
 
