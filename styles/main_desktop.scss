@@ -774,8 +774,8 @@ span.forarrow {
             width: 100%;
             text-align: center;
             transition: all .3s ease;
-            background: #191919;
-            color: white;
+            background: #eee;
+            color: #333;
             display: block;
             font-family: SourceSans;
         }
@@ -783,7 +783,7 @@ span.forarrow {
             top: 1px;
         }
         .view-btn:hover{
-            background: #555;
+            background: #333;
             color: #eee;
         }
         .price{

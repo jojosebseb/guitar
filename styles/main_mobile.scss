@@ -500,12 +500,12 @@ $container-width: 100%;
     z-index: 5;
 }
 .arrow-container.prev{
-    left: 25px;
+    left: 15px;
     border-right: 0;
     border-bottom: 0;
 }
 .arrow-container.next{
-    right: 25px;
+    right: 15px;
     border-left: 0;
     border-top: 0;
 }
@@ -542,7 +542,7 @@ $container-width: 100%;
     //     border-color: #9e8d35;
     // }
     .product-big{
-        width: 80%;
+        width: 100%;
         margin: auto;
         text-align: center;
         margin-bottom: 10px;
@@ -551,7 +551,8 @@ $container-width: 100%;
         background-position: center center;
         background-size: contain;
         background-repeat: no-repeat;
-        display: none;
+        // display: none;
+        margin-bottom: 0px;
     }
     #productShow{
         transition: all 0.5s ease;
@@ -572,7 +573,7 @@ $container-width: 100%;
         z-index: 5;
         .form-header{
             color: white;
-            background: rgba(0,0,0,0.5);
+            background: #111;
             padding: 10px;
             margin-bottom: 10px;
             font-family: MeriReg;
@@ -649,14 +650,21 @@ $container-width: 100%;
     }
     .product-thumbnail{
         width: 100%;
+        padding: 10px 40px;
         margin: auto;
         margin-top: 0px;
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: -74px;
+        background: black;
+        // display: flex;
+        // flex-wrap: wrap;
+        // margin-bottom: -74px;
         .thumbnail-module{
+            padding: 5px;
             opacity: 1;
             margin: 0 0px;
+            opacity: 0.5;
+        }
+        .thumbnail-module.active{
+            opacity: 1;
         }
     }
     .title{

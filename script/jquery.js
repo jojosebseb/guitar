@@ -76,14 +76,14 @@ $('.product-thumbnail').slick({
   {
     breakpoint: 1024,
     settings: {
-      slidesToShow: 1,
+      slidesToShow: 6,
       slidesToScroll: 1,
       infinite: false,
       arrows: true,
       prevArrow: '<div class="arrow-container prev"></div>',
       nextArrow: '<div class="arrow-container next"></div>',
       dots: false,
-      fade: true
+      fade: false
     }
   },
 ]
@@ -168,7 +168,7 @@ function filterFunc(){
         curTags = $(this).find('.tags').html();
         for (var i = 0; i < currentFilter.length; i++) {
             if (curTags.includes(currentFilter[i]) == true) {
-                $(this).removeClass('hidden');                
+                $(this).removeClass('hidden');
             }
         }
     });
