@@ -1396,20 +1396,96 @@ span.forarrow {
   opacity: 1;
 }
 
+#customParent {
+  background: white;
+}
+
 #customParent .container {
   position: relative;
-  display: flex;
+}
+
+#customParent .section-title, #customParent .section-caption {
+  width: 100%;
 }
 
 #customParent #customOptions {
+  padding-top: 20px;
+}
+
+#customParent .option-flex {
+  display: flex;
+  width: 350px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 150px;
+  padding-bottom: 100px;
+}
+
+#customParent .option-group {
+  padding: 0px 0px;
+  margin: 10px 0;
   width: 100%;
+}
+
+#customParent .option-group .option-title {
+  font-family: NotoBold;
+  color: #251e1d;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  padding: 10px;
+}
+
+#customParent .option-group .option-choice {
+  font-family: SourceSans;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 15px;
+  position: relative;
+}
+
+#customParent .option-group .option-choice .prefix {
+  font-size: 10px;
+  color: #333;
+  padding-left: 1px;
+  vertical-align: middle;
+}
+
+#customParent .option-group .option-choice.active:after {
+  width: 7px;
+  height: 7px;
+  content: "";
+  background: #222;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#customParent .option-group .option-choice:hover {
+  background: rgba(200, 200, 200, 0.15);
+}
+
+#customParent .option-group .option-choice.active {
+  background: rgba(200, 200, 200, 0.2);
+  color: #111;
+}
+
+#customParent .option-group .option-choice.active .prefix {
+  color: #111;
 }
 
 #customParent #customSummary {
   width: 330px;
-  border-left: 1px solid #eee;
   font-family: NotoBold;
-  padding: 50px 10px;
+  padding: 20px 10px;
+  position: fixed;
+  left: 51vw;
+  top: 150px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
 }
 
 #customParent #customSummary .title {
@@ -1435,6 +1511,9 @@ span.forarrow {
 
 #customParent #customSummary .form-group .form-title {
   font-family: NotoBold;
+  font-size: 13px;
+  width: 105px;
+  position: relative;
 }
 
 #customParent #customSummary .form-group .form-text {

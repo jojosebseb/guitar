@@ -176,3 +176,11 @@ function filterFunc(){
         $('.product-module').removeClass('hidden');
     }
 }
+
+$('.option-choice').on('click', function(){
+    $(this).parent().find('.option-choice').removeClass('active');
+    $(this).addClass('active');
+})
+$('.view-summary-handle').on('click', function(){
+    $('#customSummary').toggleClass('active');
+})

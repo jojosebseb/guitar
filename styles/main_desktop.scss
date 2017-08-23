@@ -1288,21 +1288,87 @@ span.forarrow {
 }
 //featureParent
 #customParent{
+    background: white;
     .container{
         position: relative;
-        display: flex;
+    }
+    .section-title, .section-caption{
+        width: 100%;
     }
     #customOptions{
+        padding-top: 20px;
+    }
+    .option-flex{
+        display: flex;
+        width: 350px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 150px;
+        padding-bottom: 100px;
+    }
+    .option-group{
+        padding: 0px 0px;
+        margin: 10px 0;
         width: 100%;
-        // min-height: 500px;
+        // border: 1px solid #eee;
+        .option-title{
+            font-family: NotoBold;
+            color: rgb(37, 30, 29);
+            padding-bottom: 5px;
+            border-bottom: 1px solid #333;
+            font-size: 14px;
+            padding: 10px;
+        }
+        .option-choice{
+            font-family: SourceSans;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 8px 15px;
+            position: relative;
+            .prefix{
+                font-size: 10px;
+                color: #333;
+                padding-left: 1px;
+                vertical-align: middle;
+            }
+        }
+
+        .option-choice.active:after{
+            width: 7px;
+            height: 7px;
+            content: "";
+            background: #222;
+            border-radius: 50%;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .option-choice:nth-child(even){
+            // background: #f1f1f1;
+        }
+        .option-choice:hover{
+            background: rgba(200,200,200,0.15);
+        }
+        .option-choice.active{
+            background: rgba(200,200,200,0.2);
+            color: #111;
+            .prefix{
+                color: #111;
+            }
+        }
     }
     #customSummary{
         width: 330px;
-        border-left: 1px solid #eee;
         font-family: NotoBold;
-        padding: 50px 10px;
+        padding: 20px 10px;
+        position: fixed;
+        left: 51vw;
+        top: 150px;
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 5px;
         .title{
-
             font-family: MeriBold;
             opacity: 0.8;
         }
@@ -1322,6 +1388,9 @@ span.forarrow {
             .form-title{
                 font-family: NotoBold;
                 // opacity: 0.6;
+                font-size: 13px;
+                width: 105px;
+                position: relative;
             }
             .form-text{
                 font-family: SourceSans;
