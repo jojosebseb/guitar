@@ -442,11 +442,11 @@ $container-width: 1100px;
     z-index: 4;
     background: white;
     // color: white;
-    font-family: MeriReg;
-    font-size: 12px;
+    font-family: NotoReg;
+    font-size: 14px;
     .flex{
         justify-content: space-between;
-        padding: 20px;
+        padding: 40px 0;
         align-items: center;
     }
 }

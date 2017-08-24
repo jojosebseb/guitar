@@ -488,7 +488,7 @@ a {
 #footer {
   width: 100%;
   z-index: 4;
-  font-family: MeriReg;
+  font-family: NotoReg;
   font-size: 13px;
   background: #fafafa;
   box-shadow: inset 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
@@ -496,15 +496,16 @@ a {
 
 #footer .flex {
   justify-content: space-between;
-  padding: 10px 15px;
+  padding: 20px 15px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 #footer .flex-module {
   width: 100%;
-  padding: 3px 15px;
+  padding: 7px 15px;
   text-align: center;
+  font-size: 12px;
 }
 
 .w40 {

@@ -443,13 +443,13 @@ a {
   width: 100%;
   z-index: 4;
   background: white;
-  font-family: MeriReg;
-  font-size: 12px;
+  font-family: NotoReg;
+  font-size: 14px;
 }
 
 #footer .flex {
   justify-content: space-between;
-  padding: 20px;
+  padding: 40px 0;
   align-items: center;
 }
 
