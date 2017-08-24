@@ -101,7 +101,9 @@ $container-width: 100%;
         font-size: 14px;
         /* display: none; */
         position: absolute;
-        background: rgba(20, 20, 20, 0.95);
+        background: rgba(255, 255, 255, 1);
+        border-top: 1px solid #eee;
+        box-shadow: 0px 2px 1px 1px rgba(0,0,0,0.3);
         top: 51px;
         flex-wrap: wrap;
         width: 100%;
@@ -112,28 +114,20 @@ $container-width: 100%;
         li{
             position: relative;
             width: 100%;
-            color: white;
+            color: #333;
 
             a{
-                padding: 15px 0px 5px 15px;
+                padding: 8px 0px 8px 15px;
                 opacity: 0.8;
                 transition: all .3s ease;
                 letter-spacing: 1px;
             }
             img{
-                filter: invert(100);
+                // filter: invert(100);
             }
             .sub-menu{
                 display: none;
-                // position: absolute;
-                // font-size: 12px;
-                // width: 200px;
-                // background: white;
-                // padding: 5px 0;
-                padding: 5px 30px 0px;
-                // left: 10px;
-                // border: 1px solid #eee;
-                // border-top: 0;
+                padding: 0px 30px 0px;
                 li{
                     opacity: 0.8;
                     a{
@@ -282,8 +276,8 @@ $container-width: 100%;
     }
 }
 #conceptParent{
-    background: #191919;
-    color: white;
+    // background: #191919;
+    // color: white;
     padding: 30px;
     .flex{
         flex-wrap: wrap;
@@ -452,26 +446,29 @@ $container-width: 100%;
     position: relative;
     z-index: 5;
     margin-bottom: 34px;
-    padding-top: 53px;
-    padding-bottom: 30px;
+    // padding-top: 53px;
+    // padding-bottom: 30px;
 }
 //parentContainer
 
 //Footer
 #footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     z-index: 4;
-    background: black;
-    color: white;
     font-family: MeriReg;
-    font-size: 11px;
+    font-size: 13px;
+    background: #fafafa;
+    box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.3);
     .flex{
         justify-content: space-between;
-        padding: 10px;
+        padding: 10px 15px;
         align-items: center;
+        flex-wrap: wrap;
+    }
+    .flex-module{
+        width: 100%;
+        padding: 3px 15px;
+        text-align: center;
     }
 }
 //Footer
@@ -974,6 +971,7 @@ span.forarrow {
     margin: auto;
     font-size: 12px;
     font-family: NotoReg;
+    padding: 10px;
     // padding-top: 10px;
     // padding-left: 10px;
     text-align: left;
@@ -1273,8 +1271,9 @@ span.forarrow {
                 top: 5px;
             }
             .feature-paragraph{
-                font-size: 12px;
+                font-size: 14px;
                 line-height: 20px;
+                font-family: SourceSans;
                 padding-top: 5px;
                 opacity: 0.87;
                 position: relative;
@@ -1293,7 +1292,7 @@ span.forarrow {
                 top: 0;
             }
             .feature-paragraph{
-                opacity: 1;
+                opacity: .67;
                 top: 0;
             }
         }
@@ -1328,21 +1327,47 @@ span.forarrow {
         padding: 0px 0px;
         margin: 10px 0;
         width: 100%;
-        // border: 1px solid #eee;
+        // overflow: hidden;
+        // max-height: 30px;
+        transition: all .3s ease;
         .option-title{
             font-family: NotoBold;
             color: rgb(37, 30, 29);
             padding-bottom: 5px;
             border-bottom: 1px solid #333;
             font-size: 14px;
-            padding: 10px;
+            padding: 5px 5px;
+            position: relative;
+            cursor: pointer;
+            .chosen{
+                font-family: SourceSans;
+                padding-left: 0px;
+                font-size: 14px;
+                padding-top: 5px;
+            }
+        }
+        .option-title:after{
+            content: "";
+            height: 10px;
+            width: 10px;
+            background-image: url('../img/global/drop-arrow.png');
+            position: absolute;
+            background-size: contain;
+            right: 5px;
+            top: 12px;
+            transition: all .3s ease;
         }
         .option-choice{
             font-family: SourceSans;
             font-size: 14px;
             cursor: pointer;
-            padding: 8px 15px;
+            padding: 8px 25px;
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
             position: relative;
+            opacity: 0;
+            transition: all .3s ease;
             .prefix{
                 font-size: 10px;
                 color: #333;
@@ -1350,7 +1375,6 @@ span.forarrow {
                 vertical-align: middle;
             }
         }
-
         .option-choice.active:after{
             width: 7px;
             height: 7px;
@@ -1358,7 +1382,7 @@ span.forarrow {
             background: #222;
             border-radius: 50%;
             position: absolute;
-            right: 10px;
+            left: 10px;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -1374,6 +1398,17 @@ span.forarrow {
             .prefix{
                 color: #111;
             }
+        }
+    }
+    .option-group.active{
+        // max-height: 250px;
+        .option-title:after{
+            transform: rotateZ(-180deg);
+        }
+        .option-choice{
+            opacity: 1;
+            max-height: 30px;
+            padding: 8px 25px;
         }
     }
     #customSummary{
@@ -1473,4 +1508,63 @@ span.forarrow {
     right: 30px;
     opacity: 0.3;
     z-index: 5;
+}
+
+
+
+#hallOfFame{
+    padding-top: 70px;
+    .gallery-flex{
+        display: flex;
+        flex-wrap: wrap;
+        // width: 700px;
+        margin: auto;
+        .gallery-module{
+            width: 100%;
+            margin: 20px;
+            position: relative;
+            img{
+                width: 100%;
+                display: block;
+            }
+            .hover-tint{
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+35,0.54+90 */
+                background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.54) 90%, rgba(0,0,0,0.54) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.54) 90%,rgba(0,0,0,0.54) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.54) 90%,rgba(0,0,0,0.54) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#8a000000',GradientType=0 ); /* IE6-9 */
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: all .3s ease;
+            }
+            .description{
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                color: white;
+                font-family: MeriReg;
+                font-size: 14px;
+                opacity: 0;
+                transition: all .3s ease;
+                .model-name{
+                    font-family: NotoReg;
+                    font-size: 13px;
+                }
+            }
+        }
+        .gallery-module:hover{
+            .hover-tint{
+                opacity: 1;
+            }
+            .description{
+                bottom: 20px;
+                opacity: 0.87;
+            }
+
+        }
+    }
 }

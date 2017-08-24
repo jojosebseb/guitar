@@ -176,11 +176,17 @@ function filterFunc(){
         $('.product-module').removeClass('hidden');
     }
 }
-
+var curOption;
 $('.option-choice').on('click', function(){
     $(this).parent().find('.option-choice').removeClass('active');
+    curOption = $(this).html();
+    $(this).parent().find('.chosen').html('- '+curOption);    
     $(this).addClass('active');
 })
 $('.view-summary-handle').on('click', function(){
     $('#customSummary').toggleClass('active');
+})
+
+$('.option-title').on('click', function(){
+    $(this).parent().toggleClass('active');
 })
