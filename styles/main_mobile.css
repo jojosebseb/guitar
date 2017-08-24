@@ -70,6 +70,7 @@ a {
   z-index: 55;
   transition: all .3s ease;
   background: white;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #navbar .logo-container {
@@ -1110,7 +1111,6 @@ span.forarrow {
 
 #shapeParent {
   padding-top: 30px;
-  padding-bottom: 70px;
 }
 
 #shapeParent .container {
@@ -1124,7 +1124,7 @@ span.forarrow {
   font-family: NotoReg;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   justify-content: center;
   width: 100%;
 }
@@ -1204,8 +1204,6 @@ span.forarrow {
 }
 
 #namingParent {
-  margin: 50px 0;
-  padding-bottom: 40px;
   text-align: center;
 }
 

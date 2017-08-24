@@ -1397,6 +1397,37 @@ span.forarrow {
   opacity: 1;
 }
 
+.tonelab-parent {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tonelab-parent .tonelab-title {
+  width: 100%;
+  font-family: MeriBold;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.tonelab-parent .tonelab-bar {
+  width: 18%;
+  height: 100px;
+  background: #eee;
+  position: relative;
+}
+
+.tonelab-parent .tonelab-bar .bar {
+  width: 100%;
+  height: 50%;
+  background: rgba(87, 32, 54, 0.75);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 #customParent {
   background: white;
 }
