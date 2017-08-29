@@ -70,7 +70,7 @@ a {
   z-index: 55;
   transition: all .3s ease;
   background: white;
-  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
 #navbar .logo-container {
@@ -198,43 +198,40 @@ a {
 }
 
 #newsSlider {
-  background: #eee;
   position: relative;
   top: -53px;
   margin-bottom: -53px;
 }
 
-#newsSlider #slider1 {
-  background-image: url("../img/global/banner-9.jpg");
-}
-
-#newsSlider #slider2 {
-  background-image: url("../img/global/banner-4.jpg");
-}
-
-#newsSlider #slider3 {
-  background-image: url("../img/global/banner-6.jpg");
-}
-
 #newsSlider .slider-module {
-  min-height: 90vh;
+  min-height: 45vh;
+  margin-top: 40vh;
   background-size: cover;
   background-position: center center;
+  background: #f5f5f5;
+}
+
+#newsSlider .staple-image {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  max-height: 380px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
 }
 
 #newsSlider .text-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 80%;
-  color: white;
+  top: -20%;
+  left: 10px;
+  text-align: left;
+  width: 280px;
+  color: black;
   font-family: MeriReg;
+  z-index: 5;
 }
 
 #newsSlider .text-container .text-title {
-  font-size: 24px;
+  font-size: 22px;
   font-family: MeriBold;
   transition: all .5s ease;
   opacity: 0;
@@ -244,11 +241,14 @@ a {
 
 #newsSlider .text-container .text-caption {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
   transition: all .5s ease .2s;
   opacity: 0;
   position: relative;
   top: 15px;
+  opacity: 0.8;
+  padding-right: 60px;
+  line-height: 20px;
 }
 
 #newsSlider .text-container .general-button {
@@ -264,11 +264,17 @@ a {
   opacity: 0;
   position: relative;
   top: 15px;
+  color: white;
 }
 
-#newsSlider .slick-active .text-title, #newsSlider .slick-active .text-caption, #newsSlider .slick-active .general-button {
+#newsSlider .slick-active .text-title, #newsSlider .slick-active .general-button {
   top: 0;
   opacity: 1;
+}
+
+#newsSlider .slick-active .text-caption {
+  top: 0;
+  opacity: 0.8;
 }
 
 #newsSlider .slick-dots {
@@ -336,6 +342,10 @@ a {
   padding-top: 10px;
 }
 
+#seriesHighlights .series-paragraph {
+  display: none;
+}
+
 #seriesHighlights .series-container {
   justify-content: space-between;
   width: 100%;
@@ -347,10 +357,11 @@ a {
 }
 
 #seriesHighlights .series-container .w30 {
+  position: relative;
   width: 300px;
   margin: auto;
   opacity: 1;
-  padding: 10px 10px;
+  padding: 10px 10px 30px;
   transition: all .3s ease;
   outline: none;
 }
@@ -361,7 +372,7 @@ a {
   text-align: center;
   opacity: 0;
   position: relative;
-  transition: all .5s ease .7s;
+  transition: all .5s ease .1s;
 }
 
 #seriesHighlights .series-container .w30 .series-caption {
@@ -370,7 +381,7 @@ a {
   font-size: 11px;
   padding-bottom: 10px;
   opacity: 0;
-  transition: all .5s ease .1s;
+  transition: all .5s ease .2s;
   width: 100%;
 }
 
@@ -385,15 +396,14 @@ a {
 #seriesHighlights .series-container .w30 .series-button {
   font-family: MeriReg;
   text-align: center;
-  position: relative;
+  position: absolute;
   font-size: 14px;
   width: 100%;
   opacity: 1;
-  top: 0px;
   display: inline-block;
   margin: auto;
   opacity: 0;
-  top: 10px;
+  bottom: -20px;
   transition: all .5s ease .5s;
 }
 
@@ -403,7 +413,7 @@ a {
 }
 
 #seriesHighlights .series-container .w30.slick-current .series-caption {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 #seriesHighlights .series-container .w30.slick-current img {
@@ -411,8 +421,8 @@ a {
 }
 
 #seriesHighlights .series-container .w30.slick-current .series-button {
-  top: 0;
-  opacity: 1;
+  bottom: 10px;
+  opacity: 0.8;
 }
 
 #indexGallery {
@@ -439,7 +449,7 @@ a {
   position: relative;
   height: 33.33vw;
   overflow: hidden;
-  border: 1px solid #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
@@ -483,7 +493,6 @@ a {
   background: white;
   position: relative;
   z-index: 5;
-  margin-bottom: 34px;
 }
 
 #footer {

@@ -58,6 +58,9 @@ $container-width: 1100px;
 .mobile-handle{
     display: none;
 }
+.section-container{
+    padding-top: 10px;
+}
 //pallette
 
 //Navbar
@@ -71,7 +74,7 @@ $container-width: 1100px;
     z-index: 55;
     transition: all .3s ease;
     background: white;
-
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
     .logo-container{
         img{
             width: 30px;
@@ -105,7 +108,7 @@ $container-width: 1100px;
             margin-left: 20px;
             a{
                 padding: 10px 0px 10px 0px;
-                opacity: 0.7;
+                // opacity: 0.7;
                 transition: all .3s ease;
                 letter-spacing: 1px;
             }
@@ -117,6 +120,7 @@ $container-width: 1100px;
                 background: white;
                 padding: 5px 0;
                 left: 0px;
+                box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
                 // border: 1px solid #eee;
                 border-top: 0;
                 li{
@@ -172,38 +176,50 @@ $container-width: 1100px;
 #newsSlider{
     // background: #eee;
     position: relative;
-    // width: 1000px;
+    width: 90vw;
     // padding: 20px;
     margin: auto;
     #slider1{
-        background-image: url('../img/global/banner-9.jpg');
+        // background-image: url('../img/global/banner-9.jpg');
     }
     #slider2{
-        background-image: url('../img/global/banner-4.jpg');
+        // background-image: url('../img/global/banner-4.jpg');
     }
     #slider3{
-        background-image: url('../img/global/banner-6.jpg');
+        // background-image: url('../img/global/banner-6.jpg');
     }
     .slider-module{
-        min-height: 79vh;
+        // min-height: 79vh;
         background-size: cover;
         background-position: center center;
+        height: 40vh;
+        background: #f5f5f5;
+        margin-top: 30vh;
+    }
+    .staple-image{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.6));
     }
     .text-container{
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
+        top: 0%;
+        left: 25%;
+        transform: translateY(-20%);
+        text-align: left;
+        color: black;
         font-family: MeriReg;
+        width: 500px;
         .text-title{
-            font-size: 30px;
+            font-size: 27px;
             font-family: MeriBold;
             transition: all .5s ease;
             opacity: 0;
             position: relative;
             top: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         .text-caption{
             margin-top: 10px;
@@ -212,14 +228,16 @@ $container-width: 1100px;
             opacity: 0;
             position: relative;
             top: 15px;
+            padding-right: 80px;
         }
         .general-button{
             padding: 5px 25px;
             display: inline-block;
             margin: auto;
-            background: rgb(102, 47, 47);
+            background: rgb(91, 49, 49);
             font-size: 15px;
             font-family: NotoReg;
+            color: white;
             margin-top: 20px;
             outline: none;
             transition: all .5s ease .3s;
@@ -229,9 +247,13 @@ $container-width: 1100px;
         }
     }
     .slick-active{
-        .text-title, .text-caption, .general-button{
+        .text-title,  .general-button{
             top: 0;
             opacity: 1;
+        }
+        .text-caption,{
+            opacity: 0.8;
+            top: 0;
         }
     }
     .slick-dots{
@@ -262,18 +284,21 @@ $container-width: 1100px;
     // background: #191919;
     // color: white;
     padding: 30px;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.1);
     .container{
         width: 700px;
     }
     .section-title{
-        text-align: left;
+        text-align: right;
         padding-bottom: 10px;
     }
     .section-paragraph{
         font-size: 13px;
         font-family: MeriReg;
         color: #999;
-        padding-right: 30px;
+        padding-left: 30px;
+        line-height: 22px;
+        text-align: right;
     }
     img{
         width: 100%;
@@ -286,68 +311,131 @@ $container-width: 1100px;
         top: 0;
         left: -3px;
     }
+    .arrow-container{
+        width: 18px;
+        height: 18px;
+    }
+    .arrow-container.next{
+        right: -40px;
+    }
+    .arrow-container.prev{
+        left: -40px;
+    }
     .slick-list{
         margin: auto;
     }
     .series-container{
         justify-content: space-between;
         display: flex;
-        width: 1000px;
+        width: 650px;
+
         margin: auto;
+        position: relative;
         .w30{
             width: 300px;
             opacity: 1;
-            padding: 10px 30px;
+            padding: 20px 0px;
             transition: all .3s ease;
             outline: none;
             cursor: pointer;
+            position: relative;
+            padding-left: 200px;
+            .text-container{
+                position: absolute;
+                top: 80px;
+                left: 40px;
+                text-align: left;
+                width: 280px;
+                // letter-spacing: 5px;
+            }
             img{
-                margin: auto;
+                // margin: auto;
                 display: block;
-                width: 80%;
+                width: 60%;
+                float: right;
+                margin-right: 30px;
             }
             .series-button{
                 font-family: MeriReg;
-                text-align: center;
+                // text-align: center;
                 position: relative;
                 font-size: 14px;
                 width: 100%;
                 opacity: 0;
-                top: 10px;
-                transition: all .3s ease;
+                top: 60px;
+                transition: all .5s ease .3s;
                 display: inline-block;
                 margin: auto;
             }
-        }
-    }
-    .series-container:hover{
-        .w30{
-            opacity: 0.5;
-        }
-        .w30:hover{
-            opacity: 1;
-            .series-button{
-                top: 0;
-                opacity: 1;
+            .series-button:after{
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: #555;
+                transition: all .3s ease;
             }
         }
     }
+    .w30:hover{
+        img{
+            opacity: 0.7;
+        }
+
+        .series-button:after{
+            width: 80px;
+        }
+    }
+
     .series-title{
         font-family: NotoBold;
-        font-size: 15px;
-        letter-spacing: 2px;
-        text-align: center;
-
+        font-size: 24px;
+        letter-spacing: 1px;
+        padding-bottom: 5px;
+        transition: all .5s ease .1s;
+        top: 20px;
+        position: relative;
+        opacity: 0;
+    }
+    .series-paragraph{
+        font-size: 11px;
+        font-family: NotoReg;
+        padding-right: 50px;
+        line-height: 20px;
+        opacity: 0;
+        transition: all .5s ease .3s;
+        top: 20px;
+        position: relative;
     }
     .series-caption{
-        text-align: center;
         font-family: MeriReg;
-        font-size: 11px;
+        font-size: 12px;
         padding-bottom: 10px;
-        opacity: 0.8;
-        transition: all .5s ease .1s;
+        opacity: 0;
+        transition: all .5s ease .2s;
         width: 100%;
-
+        top: 20px;
+        position: relative;
+    }
+    .w30.slick-active{
+        .series-title{
+            opacity: 1;
+            top: 0;
+        }
+        .series-paragraph{
+            opacity: 0.7;
+            top: 0;
+        }
+        .series-caption{
+            top: 0;
+            opacity: 0.8;
+        }
+        .series-button{
+            opacity: 1;
+            top: 30px;
+        }
     }
 }
 #indexGallery{
@@ -364,18 +452,18 @@ $container-width: 1100px;
     .instagram-belt{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-        width: 1080px;
+        justify-content: center;
+        // width: 1080px;
         margin: auto;
-        padding: 20px 0;
+        padding: 20px 5vw;
         .instagram-module{
-            width: 180px;
+            width: 9.5vw;
+            margin: 1px;
             position: relative;
-            height: 180px;
+            height: 9.5vw;
             overflow: hidden;
-            border: 2px solid #222;
+            border: 1px solid rgba(255,255,255,0.2);
             cursor: pointer;
-
             .hover-tint{
                 width: 100%;
                 height: 100%;
@@ -445,6 +533,7 @@ $container-width: 1100px;
     // color: white;
     font-family: NotoReg;
     font-size: 14px;
+    box-shadow : inset 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
     .flex{
         justify-content: space-between;
         padding: 40px 0;
@@ -759,6 +848,8 @@ span.forarrow {
         width: 80%;
         border-left: 1px solid #eee;
         transition: all .3s ease;
+        min-height: 70vh;
+        align-content: flex-start;
     }
     .product-module{
         width: 30%;

@@ -115,7 +115,11 @@ $('#newsSlider').slick({
 
 
 $('.series-container').slick({
-   slidesToShow: 3,
+   slidesToShow: 1,
+   arrows: true,
+   prevArrow: '<div class="arrow-container prev"></div>',
+   nextArrow: '<div class="arrow-container next"></div>',
+   infinite: false,
    responsive: [
  {
    breakpoint: 1024,
@@ -180,7 +184,7 @@ var curOption;
 $('.option-choice').on('click', function(){
     $(this).parent().find('.option-choice').removeClass('active');
     curOption = $(this).html();
-    $(this).parent().find('.chosen').html('- '+curOption);    
+    $(this).parent().find('.chosen').html('- '+curOption);
     $(this).addClass('active');
 })
 $('.view-summary-handle').on('click', function(){
