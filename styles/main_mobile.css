@@ -1708,3 +1708,121 @@ span.forarrow {
   bottom: 20px;
   opacity: 0.87;
 }
+
+.coming-soon {
+  text-align: center;
+  font-family: MeriReg;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: black;
+  color: white;
+}
+
+.coming-soon #headstock {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  width: 80%;
+}
+
+.coming-soon .abs-center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.coming-soon .coming-soon-header {
+  font-size: 25px;
+}
+
+.coming-soon .caption {
+  font-family: MeriReg;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.coming-soon .sub-caption {
+  font-family: MeriReg;
+  font-size: 12px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 5;
+  width: 180px;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: NotoBold;
+}
+
+.coming-soon .sub-caption:before {
+  width: 50px;
+  height: 1px;
+  border-bottom: 1px solid white;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+.coming-soon .sub-caption:after {
+  width: 50px;
+  height: 1px;
+  border-bottom: 1px solid white;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+.coming-soon .belt {
+  font-size: 16px;
+  opacity: 0.8;
+  font-family: NotoReg;
+  margin: 20px 0;
+}
+
+.coming-soon .title {
+  margin-bottom: 30px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.coming-soon .square {
+  width: 300px;
+  position: relative;
+  padding: 30px 30px 50px;
+  text-align: center;
+  margin: 30px auto;
+  border: 1px solid rgba(156, 172, 62, 0.3);
+  font-family: NotoReg;
+}
+
+.coming-soon .social-module {
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.coming-soon .social-module .social {
+  padding-right: 10px;
+  opacity: 0.6;
+}
+
+.coming-soon .copyright {
+  font-size: 12px;
+  font-family: NotoReg;
+  bottom: -20vh;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
